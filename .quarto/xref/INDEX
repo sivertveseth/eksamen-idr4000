@@ -1,0 +1,35 @@
+{
+  "index.qmd": {
+    "index.html": "d2ce6790"
+  },
+  "intro.qmd": {
+    "intro.html": "99fba829"
+  },
+  "summary.qmd": {
+    "summary.html": "56a68132"
+  },
+  "references.qmd": {
+    "references.html": "3e179253"
+  },
+  "01-reliability-tools.qmd": {
+    "01-reliability-tools.html": "4146714d"
+  },
+  "02-regression-models.qmd": {
+    "02-regression-models.html": "db1cb74b"
+  },
+  "03-statistical-inference.qmd": {
+    "03-statistical-inference.html": "0255358f"
+  },
+  "04-study-design.qmd": {
+    "04-study-design.html": "b594ef61"
+  },
+  "05-repeated-measurements.qmd": {
+    "05-repeated-measurements.html": "79752ece"
+  },
+  "06-vitenskapsteori.qmd": {
+    "06-vitenskapsteori.html": "bad9d040"
+  },
+  "07-laboratory-report.qmd": {
+    "07-laboratory-report.html": "44931bdb"
+  }
+}
