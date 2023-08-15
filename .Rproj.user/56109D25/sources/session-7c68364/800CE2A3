@@ -3,7 +3,7 @@
     "path": "C:/Users/706194/projects/idr4000-student-assignments/index.qmd",
     "project_path": "index.qmd",
     "type": "quarto_markdown",
-    "hash": "2493275233",
+    "hash": "3048612310",
     "contents": "",
     "dirty": false,
     "created": 1692092416325.0,
@@ -12,15 +12,15 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "0,31",
+        "cursorPosition": "2,16",
         "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1692097363,
+    "lastKnownWriteTime": 1692103966,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1692097363469,
+    "last_content_update": 1692103966824,
     "read_only": false,
     "read_only_alternatives": []
 }
