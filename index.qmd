@@ -12,3 +12,5 @@ Mappeeksamen består av følgende deler:
 - Rapport: "Analyse av eksperimenter med repeterte målinger"
 
 I templatet organiseres hver del som et kapittel. 
+
+Referanser finner du sist i dokumenetet (eks. [@RN2902])
