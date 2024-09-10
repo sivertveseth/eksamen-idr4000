@@ -1,1 +1,3 @@
 # Molecular Laboratory report
+
+Select one laboratory assignment and write a detailed report. 

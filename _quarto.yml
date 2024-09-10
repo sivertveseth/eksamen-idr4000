@@ -4,7 +4,7 @@ project:
 book:
   title: "Mappeeksamen IDR4000"
   author: "Student Studentson"
-  date: "2023-08-15"
+  date: "2024-09-10"
   chapters:
     - index.qmd
     - 01-reliability-tools.qmd

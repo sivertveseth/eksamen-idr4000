@@ -1,10 +1,9 @@
 # Introduksjon til mappetemplat og Lærinsgrefleksjon {.unnumbered}
 
-Emnet IDR4000, kvantitativ metode og statistikk bruker mappeeksamen som evalueringsform. Dette er et "templat" for skriving og innlevering av eksamen. Lag en egen versjon av templatet ved å laste ned det (clone/fork) fra GitHub og bruk denne som utgangspunkt. Ta vekk alle instruksjoner før du leverer den siste versjonen av din mappe. 
+Emnet IDR4000, kvantitativ metode og statistikk bruker mappeeksamen som evalueringsform. Dette er et "templat" for skriving og innlevering av eksamen. Lag en egen versjon av templatet ved å laste ned det (fork) fra GitHub og bruk denne som utgangspunkt. Ta vekk alle instruksjoner før du leverer den siste versjonen av din mappe. Du kan levere den samme mappen med aktuelle deler oppdaterte i løpet av emnet. 
 
 Mappeeksamen består av følgende deler: 
 
-- Refleksjoner på læring i emnet
 - Rapport: "Deskriptiv statistikk, reliabilitet og validitet og verktøy for reproduserbar vitenskap".
 - Laborasjonsrapport fra molekylærlabb
 - Arbeidskrav i vitenskapsteori
@@ -12,23 +11,4 @@ Mappeeksamen består av følgende deler:
 - Rapport: "Studiedesign"
 - Rapport: "Analyse av eksperimenter med repeterte målinger"
 
-I templatet organiseres hver del som et kapittel og instruksjoner for hvert del finner du i templatet. 
-
-## Instruksjoner for læringsrefleksjon
-
-Mappeeksamen skal starte med en læringsrefleksjon. Her forventes du reflektere over hvordan de forskjellige delene i mappeeksamen (og andre aktiviteter i emnet) bidrar til oppnåelse av emnets læringsutbytte. Du finner [læringsutbytte her](https://studiekatalog.edutorium.no/inn/nb/emne/IDR4000/2023-host). Emnet har flere, delvis overlappende mål. En form for refleksjon kan være å ta utgangspunkt i læringsutbytte og beskrive aktiviteter som bidratt til at du oppnådd målene. Refleksjonen bør være et levende dokument i løpet av emnet.
-
-Emnet har Bestått/Ikke bestått som karakterskala men læringsrefleksjonen skal inneholde en egen vurdering av læring.  Her kan du bruke de generelle kvalitative beskrivelsene i tabellen under. Her er det ikke tilstrekkelig å sette en symbol eller betegnelse. Det forventes at refleksjonen inneholder motivering til vurderingen og hva som eventuelt savnes for et høyere nivå. Bruk enten læringsutbytte eller aktiviteter for å vise på eksempel hvor læringsstrategier eller innsats har bidratt/ikke bidratt til måloppnåelse. 
-
-
-| Symbol | Betegnelse | Generell, ikke fagspesifikk beskrivelse av vurderingskriterier |
-|--- |---|---|
-|A |fremragende | Fremragende prestasjon som klart utmerker seg. Kandidaten viser svært god vurderingsevne og stor grad av selvstendighet.|
-|B |meget god |Meget god prestasjon. Kandidaten viser meget god vurderingsevne og selvstendighet. 
-|C |god |Jevnt god prestasjon som er tilfredsstillende på de fleste områder. Kandidaten viser god vurderingsevne og selvstendighet på de viktigste områdene. |
-|D |nokså god| En akseptabel prestasjon med noen vesentlige mangler. Kandidaten viser en viss grad av vurderingsevne og selvstendighet. |
-|E |tilstrekkelig |Prestasjonen tilfredsstiller minimumskravene, men heller ikke mer. Kandidaten viser liten vurderingsevne og selvstendighet. |
-|F |ikke bestått |Prestasjon som ikke tilfredsstiller de faglige minimumskravene. Kandidaten viser både manglende vurderingsevne og selvstendighet.|
-
-
-For en godkjent mappeeksamen kreves et fullstendig refleksjonsnotat. 
+I templatet organiseres hver del som et kapittel. 
