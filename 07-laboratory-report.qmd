@@ -290,7 +290,7 @@ o Cover blot in clear plastic wrap
 
 - Punkt 2.2.8: En annen person utførte vaskingen - derfor ikke kontroll over dette. 
 
-##Resultater
+## Resultater
 
 Vi benyttet oss av WB-analyse for å kvantifisere total p70S6K og fosforlyert p70S6K, slik at vi kunne undersøke fosforyleringsnivået til proteinet i vastus lateralis til de ulike testpersonene. Intensiteten til fosforylert p70S6K (p-p70) og total p70S6K (t-p70) ble normalisert mot totalprotein fra membran blottet. Fosforyleringsnivået ble beregnet som forholdet mellom p-p70 og t-70 (p-p70 / t-p70). Intensitetsverdiene som presenteres i tabellene er basert på optisk tetthet fra Western blot-bildene. Verdiene representerer relative signalstyrker og har ingen absolutt måleenhet, da kalibreringskurve ikke ble benyttet. For å korrigere for variasjoner i proteinmengde mellom brønnene, f.eks grunnet pipeteringsfeil eller feil i total protein-målinger, ble intensitetene normalisert mot total proteinmengde (membran blot).
 

@@ -12,3 +12,194 @@ The purpose of this assignment is to present estimates of reliability of measure
 - At least one figure (created from your data), and
 - data presented in the text.
 - The report should use a bibliography file to manage references.
+
+**Mangler introduksjon!!**
+
+
+## Metode - gjennomføring av VO^2^max test
+
+### Utstyr som ble benyttet
+
+-   Biosen (for måling av laktat)
+    -   lansett finger
+    -   rør for oppsamling av blod
+    -   blandingscontainer for rør med blod
+    -   papir for å tørke av finger
+-   Vyntus (for måling av metabolsk respons)
+    -   miksekammer
+    -   turbin
+    -   slange fra miksekammer til munnstykke
+    -   neseklype (teipbit på nese for at neseklype skulle sitte godt)
+    -   gassbeholder med referansegass
+-   Lode-sykkel
+    -   Samme oppsett på sykkel ved hver test (høyde sete, avtsand sete til styre, osv.). Oppsettet lagres på data etter innstilling ved t1.
+    -   MTB pedaler
+    -   172,5 mm lengde krankarmer
+-   Gulvvifte (samme instilling ved hver test)
+-   Pulsbelte garmin
+-   Hansker
+-   Minnepenn for overføring av data
+
+### Forberedelse og kalibrering av utstyr
+
+1.  Sørg for at Biosen er på, og at det er nok væske i kalibreringssolution (rød flaske). Sett igang kalibrering av Biosen om det er nødvendig.
+2.  Ta med nødvendig laktatutstyr bort til sykkelen, herunder: lansett, rør for oppsamling av blod og papir.
+3.  Kalibrering av Vyntus CPX
+    a.  Skru på kalibreringsgassen.
+    b.  Se til at turbin er koblet til sampling slange og optoelektronisk måler.
+    c.  Koble til kalibreringsporten på CPX-en og kjør både volum- og gasskalibrering. OBS! Ved differanse på over 2% under volumkalibrering eller differanse over 0.2% differanse under gasskalibrering, gjennomfør nødvendig feilsøking og kjør kalibrering på nytt.\
+4.  Ta på hansker og sett sammen munnstykke. Dekk til munnstykket med papir med hjelp av neseklype.
+5.  Ta med munnstykke og slange bort til sykkel og Vyntus CPX. Fest munnstykke til slange, og slange til miksekammer.
+6.  Legg til ny eller velg aktuell testdeltager.
+    a.  Ny testdeltager legges til, og følgende ID-informasjon legges til under fornavn, etternavn og personnummer: idr4000_h24_gr4_idxx (xx=nr).
+
+### Forberedelse av testdeltager
+
+-   Informasjon fra testansvarlig til testdeltaker vedrørende hvordan test skal gjennomføres:
+    -   VO2max test der vi starter på en gitt watt (motstand). Watten vil øke hvert minutt (hvor mye avhenger av protokoll) og testdeltaker sykler helt til han/hun ikke greier mer.
+    -   Test avsluttes dersom tråkkfrekvens \< 60 rpm.
+    -   Test skal gjennomføres sittende
+    -   Borg skala benyttes når utmattelse inntreffer hos testdeltaker. Deltaker vil bli spurt om å gi et tall fra 6-20 på hvor sliten han/hun er, der 6 er "ingen anstrengelse" og 20 er "maksimal anstrengelse".
+    -   Underveis i test vil testdeltaker ha tilgang på hvor lenge han/hun har syklet.
+    -   Testdeltaker informeres om at testleder kun vil informere om hvor lenge det er til neste økning og hvilken watt som sykles på for øyeblikket. Annen data som puls, VO2, osv., vil ikke utøver ha tilgang på underveis i test.
+    -   Testleder vil mot slutten av test bidra til å pushe testdeltaker slik at han/hun får ut sitt ytterste. Hvordan denne "pushingen" gjennomføres vil variere fra testleder til testleder. Det viktige er at testleder oppfører seg tilnærmet likt ved hver test ovenfor den aktuelle testdeltaker.
+
+### Når testdeltaker er ferdig å sykle
+
+-   Testleder har nå spurt om Borgs skala
+-   Etter 1 min tas en laktatprøve av testdeltaker for å estimere la.max. Prøver plasseres i beger med løsning før den vendes og plasseres i Biosen for måling.
+-   Noterer ned hvor lenge deltaker syklet og henter så ut resten av data fra test via rapport på vyntus.
+-   Data som er hentet ut er formatert i excel. Deretter benyttet vi read_xlsx for å importere datafilen til R.
+
+## Standardisering av test
+
+-   Matinntak:
+    -   siste store måltid senest 2 timer før teststart. Tillatt å spise èn mindre karbohydratkilde senest 30 min før test, dvs. èn banan, èn bar, èn gel, osv.
+-   Koffeininntak:
+    -   inntak som normalt.
+-   Test gjennomføres på samme tidspunkt på dagen ved alle tester
+-   Søvn/døgnrytme:
+    -   forsøk å opprettholde normal døgnrytme gjennom testperioden.
+-   Trening:
+    -   ingen hard trening på underkropp dagen før test.
+-   Oppvarmingsprotokoll:
+    -   5 min oppvamring, der deltageren sykler på økende intensitet i 2-2-1 min, eks: (2 min 150W, 2 min 175W, 1 min 220W)
+-   Samme testprotokoll ved alle testene:
+    -   Her vil det være individuelle forskjeller, eks: start på 200W - 20W økning hvert minutt til utmattelse.
+
+## Intern validering
+
+Både tekniske og biologiske faktorer kan potensielt påvirke resultatene og true den interne validiteten av testen [@Halperin]. Ved å beskrive og etablere testprosedyre samt standardisere testen, ønsker vi å skape rammer som sikrer at vi kontrollerer for mulige konfunderende faktorer som kan påvirke testprestasjon. Dette vil bidra til å redusere variasjoner og sikre at resultatene reflekterer faktiske prestasjoner, snarere enn påvirkninger fra ytre faktorer.
+
+Selv om vi har jobbet for å sikre god intern validitet, er det faktorer som vil kunne påvirke resultatene grunnet individuelle forskjeller i måten å opptre som testleder, bruk av musikk, samt humør og mental status til testdeltager [@Halperin].
+
+## Tabeller og plots med datasett fra alle gruppene
+
+```{r}
+#| message: false
+#| echo: false
+#| warning: false
+
+library(readxl)
+library(tidyverse)
+library(gt)
+library(magrittr)
+
+df_all <- read_xlsx("plot_data_all_gr.xlsx") |> 
+  mutate(w.max = as.numeric(w.max), 
+         la.max = as.numeric(la.max), 
+         hr.max = as.numeric(hr.max), 
+         rer.max = as.numeric(rer.max))
+  
+```
+
+### Plot
+
+```{r}
+#| warning: false
+#| message: false
+#| echo: false
+#| label: plot av vo2.max og w.max
+
+ggplot(data = df_all, 
+      aes(vo2.max, 
+          w.max, 
+          color = age)) +
+  geom_point() +
+  
+  labs(subtitle = "Sammenheng mellom vo2.max, w.max og alder") 
+
+```
+
+### Tabell
+
+```{r}
+#| warning: false
+#| message: false
+#| echo: false
+#| tbl-cap: "Verdier er gj.snitt og standardavvik for de ulike testtidspunktene"
+#| label: snitt og standardavvik for verider w.max og vo2.max per id
+
+df_all |> 
+  select(id, timepoint, w.max, vo2.max) |> 
+  
+  pivot_longer(names_to = "names", 
+               values_to = "tall", 
+               cols = w.max:vo2.max) |> 
+  
+  summarise(.by = c(timepoint, names), 
+            m = mean(tall, na.rm = TRUE), 
+            sd = sd(tall, na.rm = TRUE)) |> 
+  
+  mutate(m_sd = paste0(signif(m, 3), " (", signif(sd, 3),") ")) |> 
+  
+  ungroup() |> 
+  
+  select(-m, -sd) |> 
+  
+  pivot_wider(names_from = names, 
+              values_from = m_sd) |> 
+  
+  gt()
+
+```
+
+### Beregning av reliabilitet
+
+```{r}
+#| warning: false
+#| message: false
+#| echo: false
+#| tbl-cap: "Sammenlikner t1 og t2 og ser på gj.snittsverdi, st.avvik, typ. error og coeff. of variation av variabelen w.max"
+#| label: mean, sd, te og cv for w.max verdien
+
+dat <- df_all |> 
+  
+  #velger de variablene vi ønsker å se på
+  select(id, timepoint, w.max) |> 
+  
+  # benytter pivot_wider for lage !tidy-data, nå ser vi eks id_01 sin w.max ved timepoint == t1 osv.
+  pivot_wider(names_from = timepoint, 
+              values_from = w.max) |> 
+  
+#så vil vi se på typical error og regne på reliabilitet. Muterer så vi får en verdi som er differansen mellom t2 og t1
+  mutate(diff = t2 - t1) |> 
+  
+  #summarise tar veridene i kolonnene til t1 og t2 og regner snittet av de, samt standardavviket
+  summarise(m = mean(c(t1, t2), na.rm = TRUE), 
+            s = sd(diff, na.rm = TRUE), 
+            te = s / sqrt(2), 
+            cv = te/m * 100) 
+
+#henter ut cv_perc som brukes som data i text
+cv_perc <- round(dat$cv,2)
+
+#lager tabell her og runder av tall i tabell med 2 desimaler
+dat |> 
+  gt() |> 
+  
+  fmt_number(decimals = 2)
+
+```
+
+Ifølge Hopkins (2000) er "typical error" den gjennomsnittlige variasjonen ved en test. Typical error gir en indikasjon på den forventede variasjonen ved en retest. I dette tilfellet hvor vi ser på watt.max, kan en forvente at watt.max ved neste test vil variere med `r cv_perc` % [@Hopkins].
