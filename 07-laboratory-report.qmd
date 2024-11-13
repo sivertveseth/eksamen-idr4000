@@ -1,3 +1,369 @@
-# Molecular Laboratory report
+---
+title: "Mitt dokument"
+format: html
+editor: 
+  markdown: 
+    wrap: 72
+---
 
-Select one laboratory assignment and write a detailed report. 
+Molecular Laboratory report
+
+Select one laboratory assignment and write a detailed report.
+
+## Introduksjon og bakgrunn
+
+I jakten på å bedre forstå de molekylære reaksjonene som er involvert i reguleringen av transkripsjon og translasjon ved trening, ernæring, sykdom og aldring, har også interessen og bruken av Western blot (WB) innenfor treningsfysiologi økt. WB har flere bruksområder for undersøkelse av regulatoriske molekylære reaksjoner, som for eksempel kvantifisere proteinmengde og protein-protein-interaksjoner, som er avgjørende for å kunne konstatere fysiologiske adaptasjoner til trening (Bass et al., 2017). Prosessen i WB deles inn i følgende steg:
+
+
+
+1) Ekstraksjon av protein fra en sammensatt mikstur av intracellulær og ekstracellulær protein 
+
+2) Kvantifisering av proteinkonsentrasjon og elektroforese av protein
+
+3) Overføring til en stabil membran med høg binding av proteiner
+
+4) "Blokking" av membranen for å redusere bindingen av ikke-ønskede molekyl
+
+5) Binding av antistoffer til de spesifikke proteinene man ønsker å undersøke
+
+6) Binding av et sekundært antistoff, med en markør, til det første antistoffet
+
+7) Utvikling og gjenkjenning av markøren
+
+8) Kvantifisering av de resulterende båndene med hjelp av densiometriprogramvare
+
+
+
+Tidligere har WB kun blitt assosiert med selve prosessen med å overføre proteinet fra en gel til en mer stabil membran, mens nå referer man til WB når man skal forklare hele prosessen (Bass et al., 2017, s.2).
+
+Formålet med vårt eksperimentet er å benytte seg av WB for å se på den totale mengden av p70S6K (t-p70) og mengden fosforisert p70S6K fra muskelvev. Med dette kan vi si noe om fosforyleringsnivået av p70S6K i muskulaturen, som reflekterer hvor stor andel av p70S6K som er aktiv i forhold til den totale proteinmengden i vevet. Muskelprøvene er hentet fra høgre og venstre ben til ulike testpersoner, der alle har gjennomgått styrketrening av de ene beinet ved ulike tidspunkt før selve biopsien (var høgre ben på alle testpersonene som gjennomførte en styrketrening):
+
+- Hennie (HE) = 10 min før biopsi
+- Lars (LØ) = 30 min før biopsi
+- Trond (T) = 60 min før biopsi
+
+Prøven ble homogenisert forut for WB-analysen, som vil si at vi har frigjort proteinene gjennom mekanisk eller kjemisk nedbryting av cellemembranen. Selve protokollen og hvordan vi har utført homogeniseringen og WB er beskrevet under, samt presentasjon og diskusjon av resultatene.
+
+
+## Metode
+
+
+### Homogenisering av muskelprøver
+
+Vi benyttet oss av fryst vev av m.vastus lateralis som var blitt ekstrahert fra både det høyre og venstre låret til en av prøvedeltakerne. Vekten på de ulike prøvene var:
+
+Høgre bein (HE-R): 14,0 μg
+Venstre bein (HE-L): 14,5 μg
+
+Til homogenseringen benyttet vi oss av en plastpistill, og tilsatte 600 μl med lysat-buffer som var satt sammen av 594 μl t-per og 6 μl pink for å visualisere om vevet var fullstendig homogenisert. 
+
+For å måle proteinkonsentrasjonen i prøven vår, brukte vi Bradford Assay-metoden. Denne metoden bruker et fargestoff, Coomassie Brilliant Blue G-250, som vil binde seg til proteiner og skape en reaksjon der prøven vil skifte farge til blå i proporsjon med proteinkonsentrasjonen mengden protein. For å kvantifisere proteinkonsentrasjonen laget vi en standardkurve med bovint serumalbumin som referanse, slik at vi kunne sammenligne blåfargen i vår prøve med kjente proteinkonsentrasjoner. Vi måler deretter, med hjelp av et spektrofotometer, hvor mye av prøvene som blir absorbert ved 595 nm for å kunne bestemme om prøvene våre inneholder lave eller høge konsentrasjoner av proteiner (Noble & Bailey, 2008). Protokollen under er en generell fremgangsmåte for homogenisering av vev, og avvik og sentrale anmodninger er kommentert under de ulike punktene.  
+
+
+Definisjoner:
+- BSA = Bovint serumalbumin, et protein som blir utvunne fra blodplasmaet til storfe. Ofte brukt som standard for proteinkonsentrasjon.
+
+#### Utstyrsliste
+
+* Microfuge tubes (1.5 ml Eppendorf)
+
+* Plastic pestle
+
+* Centrifuge (capable of 10 000 g and 4°C)
+
+* Ice
+
+* Lysis buffer (e.g. Hepes-buffer, Ripa-buffer)
+
+
+#### Protokoll
+
+1. Prepare the tissue by dissection away any connective tissue and blood. If you are working with wet tissue, this step should be done prior to freezing. Freeze dried tissue can be dissected in room temperature under the microscope. Use 10-50 mg wet-weight tissue or 2-10 mg freeze-dried tissue
+
+2. Add protease/phosphatase inhibitors to the ice-cold lysis buffer (10 μl/ml). 
+
+- Pipetering mulig feilkilde i t-per, og i ene prøven (høyre)
+
+3. Keep the sample on dry ice or cooling block until you add the ice cold lysis buffer of choice. Use 20 μl/mg wet-weight or 80 μl/mg dry weight.
+
+
+Dry: 2 mg → 160 μl, 5 mg → 400 μl, 10 mg → 800 μl
+
+4. Quickly disrupt the tissue by hand using the plastic pestle until there are no visible pieces. 
+
+5. Keep the sample on ice, vortex or rotate the sample for 20-60 min.
+
+- Varighet av roteringen var 33min. 
+
+6. Spin the sample 10 min, 10 000 g, 4°C
+
+7. Carefully remove the supernatant to a new tube without disrupting the pellet.
+
+- Dette leddet gikk veldig bra, liten sannsynlighet for feilkilder.
+
+
+8. Aliquot the sample to a tube for protein concentration determination (1:10 dilution, 4 μl to 36 ul ddH2O. Keep a known volume for later normalization of the protein concentration (e.g. to 3 ug/ul) keep on ice. 
+
+- Myo homogenat ofte utenfor standard. Bruker 1:6 fortynner for å komme innenfor standard. 12 μl prøve og 60 μl vann. 
+- Pipetering gikk nokså bra også i dette leddet, liten sannsynlighet for feilkilde, men skal aldri utelukkes.
+
+
+9. Determine protein concentration with Bradford Assay. 10 μl sample + 250 μl reagent. Make BSA (bovint serumalbumin) standards according to Thermo Sci guidelines (ref. 23209).
+
+- Igjen ble pipeteringen godt utført, liten sannsynlighet for feilkilder, men skal ikke utelukkes. 
+
+
+**Mulige avvik:**
+
+- Punkt 2: Feil ved pipetering
+
+
+
+### Western blot protokoll
+
+Selv om gruppen jobbet med en prøve, er WB-analysen blitt gjort på flere prøver fra 3 ulike testpersoner. For elektroforesen brukte vi Bio-Rad Criterion og en ferdiglaget gel. Selv om det ikke ble brukt en kalibreringskurve for å kvantifisere absolutt mengde p70S6K, ble intensitetsverdiene normalisert mot total proteinmengde og deretter brukt som en indikator for proteinaktivitet. Fosforyleringsnivået (p−p70/t−p70p) ble beregnet for å gi et relativt mål på aktivering av mTOR-signalveien.
+
+
+#### Solutions
+Buffer solution	Komponent	Konsentrasjon (mM)	Masse (g)
+TBS 1L 10x, pH 7.6 (HCI adjust)	
+
+Tris Base
+NaCI
+
+	20 mM x 10 = 200 mM
+137 mM x 10 = 1.37 M	0.2 x 121.1 = 24.22 g
+1.37 x 58.44 = 80.06 g
+Running buffer 1L 10x, pH 8.3	 
+
+Tris Base
+Glycin
+SDS
+
+	25 mM x 10 = 250 mM
+192 mM x 10 = 1.92 M
+3.5 mM x 10 = 35 mM	0.25 x 121.1 = 30.28 g
+1.92 x 75.07 = 144.1 g
+0.035 x 288.38 = 10.09 g
+Transfer buffer* 1L 10x	Tris Base
+Glycin	25 mM x 10 = 250 mM
+192 mM x 10 = 1.92 M	0.25 x 121.1 = 30.28 g
+1.92 x 75.07 = 144.1 g
+
+* 1 x Transfer buffer = 100 ml TB stock x 10 + 100 ml methanol + 800 ml dH2O
+
+
+
+#### Sample preparation
+
+- Muscle samples should be prepared in an appropriate sample buffer
+- Dilute samples to a final concentration of 1.5-2 μg/μl in Laemmlibuffer (Bio-Rad)
+- Boil samples for 5 min, 95°C (denaturation). Cool to room temp. prior to loading. Spin down condensate 
+
+
+
+#### Sample loading, gel electrophoresis 
+
+- Assemble electrophoresis chamber on ice, add buffer to limit-mark
+
+- Det ble brukt Running buffer
+
+- Add protein ladder/standard (5 μl)
+
+- Proteinstige: Precision Plus Protein Dual Color Standards, 500 µl #1610374
+- Pipetering gikk fint
+
+- Load samples according to pre-written load scheme (max. Loading capacity in GTX precast gels: 30 μl)
+
+- Pipeteringsfeil i brønn 5: trakk prøven tilbake i pipetten en gang. Fikk alt ut igjen, men kan ha blitt blandet.
+
+Brønn 2-6 er p-p70 og brønn 9-13 er t-p70. 
+
+1	2	3	4	5	6	7	8	9	10	11	12	13	14
+M	HE-L	HE-R	T-L	T-R	LØ-R	M	M	HE-L	HE-R	T-L	T-R	LØ-R	M
+
+M = Markør
+HE-L = Hennie venstre ben
+HE-R = Hennie høyre ben
+T-L = Trond venstre ben
+T-R = Trond høyre ben
+LØ-R = Lars høyre ben
+
+- Move electrophoresis chamber into 4 C. Top up buffer. Put on top lid.
+
+- Run gels: constant voltage, 30 min, 300 volt
+
+
+#### Protein transfer (blotting)
+
+- Disassemble gels and place them in transferbuffer 15-30 min
+
+- Prepare sandwich:
+
+Put sponges in dH2O to get rid of bubbles
+Put membranes (cut in upper left corner) in methanol to activate (5-10 min on shaker)
+Avklippet hjørne er ved brønn 18.
+Place sandwich in assembly tray – black side down. Squeeze dH2O from sponges and place them in transferbuffer – remove all bubbles
+Wet 2 filter papers in buffer, place them on top of gel and gently remove them together. Place filterpapers with gel on top of sponge. Remove bubbles
+Put membrane on top of gel. Careful with direction, membranes should be marked upper left corner. Remove bubbles
+Place the last sponge on top, close the sandwich
+Overføring til sandwich gikk fint, lav risiko for feilkilde.
+
+- Place the sandwich in transfer tray
+
+- Run transfer: Constant ampere/current 300 mA, 3 h 
+
+- Brukte hurtigprogram: 100V i 30 min.
+
+#### Stain for total protein and cut membrane
+
+- Mix destain solution with methanol 1:1 # 30:30 ml
+
+- Mix Eraser solution with methanol 1:1* 30:30 ml
+
+- Rinse the membrane quickly in dH2O
+
+- Add MemCode Sensitizer to the the membrane, place on shaker for 2 min. Decant solution,
+
+reuse 1 time
+
+- Add MemCode Reversible stain, on shaker 1 min. Decant. Reuse 1 time.
+
+- Destain by adding MemCode destain to membrane, rinse quickly 3 times
+
+- Add methanol/destain solution, on shaker, 5 min- Rinse with dH2O 4 times#
+
+- Image membrane
+
+- Cut the membrane. If multiple membranes, number each
+
+- Proceed with Eraser → Add eraser/methanol solution to the membrane on shaker, 10 min*
+
+- Rinse the membrane in dH2O 4 times. Store in TBS until cut
+
+- Cut membranes according to protein weight and/or wells used
+
+
+
+#### Blocking and primary antibody
+
+- Block the membrane in 2,5 % milk in TBS-T for 1 h at room temp
+
+- Brukte 5 % milk i TBS-T
+
+- Decant blocking solution, rinse in TBS
+
+- Add primary antibody (AB) in BSA/milk solution (5% in TBS-T), incubate over night in 4 C
+
+
+
+#### Antibody wash and secondary antibody - ble gjort av Vilde
+
+- Wash with TBS-T 2x1 min + 3x5 min
+
+- Unøyaktig vasking vil kunne føre til bakgrunnsstøy.
+
+- Add secondary AB in 2,5% milk with TBS-T for 1 h at room temp
+
+- Wash with TBS 4x5 min
+
+- Unøyaktig vasking vil kunne føre til bakgrunnsstøy.
+
+- Perform ECL
+
+o Mix working solution (Thermo super signal …)
+
+o Incubate membrane for 5 min at room temp
+
+o Cover blot in clear plastic wrap
+
+- Collect image on Gel Doc
+
+
+**Mulige avvik:**
+
+- Punkt 2.2.3: Pipeteringsfeil i brønn 5: trakk prøven tilbake i pipetten en gang. Fikk alt ut igjen, men kan ha blitt blandet.
+
+- Punkt 2.2.4: Brukte hurtigprogram: 100V i 30 min.
+
+- Punkt 2.2.7: En annen person utførte vaskingen - derfor ikke kontroll over dette. 
+
+- Punkt 2.2.8: En annen person utførte vaskingen - derfor ikke kontroll over dette. 
+
+##Resultater
+
+Vi benyttet oss av WB-analyse for å kvantifisere total p70S6K og fosforlyert p70S6K, slik at vi kunne undersøke fosforyleringsnivået til proteinet i vastus lateralis til de ulike testpersonene. Intensiteten til fosforylert p70S6K (p-p70) og total p70S6K (t-p70) ble normalisert mot totalprotein fra membran blottet. Fosforyleringsnivået ble beregnet som forholdet mellom p-p70 og t-70 (p-p70 / t-p70). Intensitetsverdiene som presenteres i tabellene er basert på optisk tetthet fra Western blot-bildene. Verdiene representerer relative signalstyrker og har ingen absolutt måleenhet, da kalibreringskurve ikke ble benyttet. For å korrigere for variasjoner i proteinmengde mellom brønnene, f.eks grunnet pipeteringsfeil eller feil i total protein-målinger, ble intensitetene normalisert mot total proteinmengde (membran blot).
+
+I Tabell 1 vises de normaliserte intensitetsverdiene for fosforylert (p-p70) og total (t-p70) p70S6K for høyre og venstre bein hos hver testperson, basert på membran blottet. Fosforyleringsnivået er beregnet som forholdet mellom normalisert p-p70 og t-p70. Fosforyleringsnivået (p-p70/t-p70) varierte mellom prøvene, med høyest nivå i høyre bein hos testperson T (1.550) og lavest i venstre bein hos testperson LØ (0.920).
+
+Testperson	Bein	Membran blot (p-p70)	Membran blot (t-p70)	p-p70 (raw)*	t-p70 (raw)*	p-p70 (norm.)	t-p70 (norm.)	Fosforyleringsnivå
+HE	Venstre	16530.472	15516.158	4276.447	4276.447	0.2587	0.2756	0.939
+HE	Høgre	10135.430	13009.673	4238.276	4238.276	0.4182	0.3257	1.284
+T	Venstre 	11187.966	12917.480	4457.276	4457.276	0.3985	0.3449	1.155
+T	Høgre	7012.388	10868.744	4148.447	4148.447	0.5916	0.3816	1.550
+LØ	Høgre	14791.037	13617.430	4249.861	4249.861	0.2872	0.3122	0.920
+
+Tabell 1: Oppsummering av absolutte verdier til de individuelle testpersonene. 
+
+
+
+
+
+Den gjennomsnittlige aktiviteten til p70S6K på tvers av gruppen var 1.168 ± 0.248, med et høyere nivå i høyre bein (1.426 ± 0.147) sammenlignet med venstre bein (0.986 ± 0.090). Variasjonen i fosforyleringsnivået var høyest på gruppenivå med en CV på 21.23%, og lavere når høyre (CV = 10.31%) og venstre bein ble analysert separat (CV = 9.13%).
+
+Parameter	Hele gruppen (n = 20)	Høyre bein (n = 10)	Venstre bein (n = 10)
+t-p70 (norm.)	
+
+Gj.sn: 0.3280
+SD: 0.0366
+CV = 11.16%
+
+	Gj.sn: 0.3537
+SD: 0.0396
+CV = 11.19%	Gj.sn: 0.3127
+SD: 0.0298
+CV = 9.53%
+p-p70 (norm.)	
+
+Gj.sn: 0.3908
+SD: 0.1174
+CV = 30.04%
+
+	Gj.sn: 0.5049
+SD: 0.1227
+CV = 24.30%	Gj.sn: 0.3148
+SD: 0.0704
+CV = 22.37%
+Fosforyleringsnivå	
+
+Gj.sn: 1.168
+SD: 0.248
+CV = 21.23%
+
+	Gj.sn: 1.426
+SD: 0.147
+CV = 10.31%	Gj.sn: 0.986
+SD: 0.090
+CV = 9.13%
+
+Tabell 2: Gjennomsnittlige nivåer av total og fosforylert p70S6K, samt forskjellen mellom disse, i høyre og venstre bein. Presenteres som gjennomsnitt (gj.snitt), standardavvik (SD) og coefficient of variation (CV) 
+
+
+
+
+## Diskusjon
+
+Intensitetsverdiene gir oss et bilde av p70S6K-aktiviteten i prøvene, og selv om absolutt kvantifisering ikke ble utført, indikerer et høyere fosforyleringsnivå en økt aktivitet av mTOR-signalveien, som spiller en viktig rolle for proteinsyntesen. Det høyere fosforyleringsnivået i høyre bein (1.4261) sammenlignet med venstre (0.986) kan forklares ved at kun det ene beinet ble trent før biopsien. Dette viser til den akutte aktiveringen av mTOR-signalveien som respons av styrketrening, der den største aktiveringen ser ut til å forekomme kort tid etter trening, med en gradvis reduksjon over tid. Et høyere fosforyleringsnivå reflekterer potensielt et større kapasitet for proteinsyntese i det trente beinet. Nivå over 1.0 i flere prøver kan tyde på høy aktivering av p70S6K, men kan også være et resultat av tekniske faktorer.
+
+Høyere variasjon i fosforylert p70S6K (CV = 30.04 %) sammenlignet med total p70S6K (CV = 11.16 %) kan skyldes biologisk variasjon i mTOR-signalveien mellom testpersoner. Samtidig kan tekniske faktorer som variasjoner i prøvehåndtering ha bidratt til dette. Lavere CV i høyre (10.31%) og venstre bein (9.13%) indikerer mer konsistens når prøvene analyseres separat. 
+
+## Konklusjon
+
+Den asymmetriske aktiveringen av mTOR-signalveien mellom høyre og venstre bein kan forklares ved at kun det ene beinet ble trent før biopsien. Resultatene viser hvordan styrketrening kan gi en akutt økning i fosforyleringsnivået av p70S6K, med størst aktivering observert kort tid etter trening. Resultatene burde likevel tolkes med omhu, da tekniske faktorer som bakgrunnsstøy på blottet, feil pipettering, ujevn proteinoverføring, manglende kalibrerintgskurve kan ha påvirket intensitetsmålingene.
+
+
+Referanser
+Bass, J. J., Wilkinson, D. J., Rankin, D., Phillips, B. E., Szewczyk, N. J., Smith, K., & Atherton, P. J. (2017). An overview of technical considerations for Western blotting applications to physiological research. Scandinavian Journal of Medicine & Science in Sports, 27(1), 4–25. https://doi.org/10.1111/sms.12702
+
+
+Noble, J. E., & Bailey, M. J. (2008). Chapter 8 Quantitation of Protein. Methods in Enzymology, 463, 73-95. https://doi.org/10.1016/S0076-6879(09)63008-1
