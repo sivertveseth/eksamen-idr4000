@@ -1,4 +1,17 @@
-
+---
+title: "Assignment 1: Reliability and tools for reproducible data science"
+author: "Sivert Helland Veseth"
+format: 
+  html:
+    number-sections: true
+    toc: true
+    code-fold: true
+execute: 
+  warning: false
+crossref:
+  fig-title: "Figur"
+  tbl-title: "Tabell"
+---
 
 # Assignment 1: Reliability and tools for reproducible data science {#assignment1}
 
@@ -105,7 +118,7 @@ library(tidyverse)
 library(gt)
 library(magrittr)
 
-df_all <- read_xlsx("plot_data_all_gr.xlsx") |> 
+df_all <- read_xlsx("data/plot_data_all_gr.xlsx") %>% 
   mutate(w.max = as.numeric(w.max), 
          la.max = as.numeric(la.max), 
          hr.max = as.numeric(hr.max), 

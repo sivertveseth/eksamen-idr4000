@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.33">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Sivert Helland Veseth">
+
+<title>6&nbsp; Vitenskapsteori – Mappeeksamen IDR4000</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./07-laboratory-report.html" rel="next">
+<link href="./05-repeated-measurements.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-07ba0ad10f5680c660e360ac31d2f3b6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-dc4b886a835b0855f28e1bcd33685bbf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./06-vitenskapsteori.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Vitenskapsteori</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Mappeeksamen IDR4000</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.pdf" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduksjon</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-reliabilitet.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Assignment 1: Reliability and tools for reproducible data science</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-regression-models.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Assignment 2: Regression models, predicting from data</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-statistical-inference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Assignment 3: Drawing inference from statistical models, and statistical power</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-study-design.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Assignment 4: Study design</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-repeated-measurements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Assignment 5: Analyzing repeated measured experiments</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-vitenskapsteori.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Vitenskapsteori</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07-laboratory-report.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Mitt dokument</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.pdf" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#arbeidskrav-i-filosofihistorie" id="toc-arbeidskrav-i-filosofihistorie" class="nav-link active" data-scroll-target="#arbeidskrav-i-filosofihistorie"><span class="header-section-number">7</span> Arbeidskrav i filosofihistorie</a>
+  <ul class="collapse">
+  <li><a href="#spørsmål-1" id="toc-spørsmål-1" class="nav-link" data-scroll-target="#spørsmål-1"><span class="header-section-number">7.1</span> Spørsmål 1</a>
+  <ul class="collapse">
+  <li><a href="#innledning" id="toc-innledning" class="nav-link" data-scroll-target="#innledning"><span class="header-section-number">7.1.1</span> Innledning</a></li>
+  <li><a href="#humes-argument-mot-induksjon" id="toc-humes-argument-mot-induksjon" class="nav-link" data-scroll-target="#humes-argument-mot-induksjon"><span class="header-section-number">7.1.2</span> Humes argument mot induksjon</a></li>
+  <li><a href="#innvending-mot-hume-sitt-argument" id="toc-innvending-mot-hume-sitt-argument" class="nav-link" data-scroll-target="#innvending-mot-hume-sitt-argument"><span class="header-section-number">7.1.3</span> Innvending mot Hume sitt argument</a></li>
+  <li><a href="#humes-respons-på-innvendinga" id="toc-humes-respons-på-innvendinga" class="nav-link" data-scroll-target="#humes-respons-på-innvendinga"><span class="header-section-number">7.1.4</span> Humes respons på innvendinga</a></li>
+  </ul></li>
+  <li><a href="#spørsmålet-2" id="toc-spørsmålet-2" class="nav-link" data-scroll-target="#spørsmålet-2"><span class="header-section-number">7.2</span> Spørsmålet 2</a>
+  <ul class="collapse">
+  <li><a href="#innledning-1" id="toc-innledning-1" class="nav-link" data-scroll-target="#innledning-1"><span class="header-section-number">7.2.1</span> Innledning</a></li>
+  <li><a href="#beskrivelse-av-falsifikasjonisme-og-poppers-motivasjon" id="toc-beskrivelse-av-falsifikasjonisme-og-poppers-motivasjon" class="nav-link" data-scroll-target="#beskrivelse-av-falsifikasjonisme-og-poppers-motivasjon"><span class="header-section-number">7.2.2</span> Beskrivelse av falsifikasjonisme og Poppers motivasjon</a></li>
+  <li><a href="#utfordring-med-falsifikasjonisme" id="toc-utfordring-med-falsifikasjonisme" class="nav-link" data-scroll-target="#utfordring-med-falsifikasjonisme"><span class="header-section-number">7.2.3</span> Utfordring med falsifikasjonisme</a></li>
+  <li><a href="#poppers-løsning" id="toc-poppers-løsning" class="nav-link" data-scroll-target="#poppers-løsning"><span class="header-section-number">7.2.4</span> Poppers løsning</a></li>
+  <li><a href="#konklusjon" id="toc-konklusjon" class="nav-link" data-scroll-target="#konklusjon"><span class="header-section-number">7.2.5</span> Konklusjon</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Vitenskapsteori</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Sivert Helland Veseth </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="arbeidskrav-i-filosofihistorie" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Arbeidskrav i filosofihistorie</h1>
+<section id="spørsmål-1" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="spørsmål-1"><span class="header-section-number">7.1</span> Spørsmål 1</h2>
+<p><em>“Ifølge Hume er det umulig å rasjonelt begrunne bruken av induksjon. Hva er argumentet for denne konklusjonen? Gi en innvending mot ett av premissene i Humes argument og prøv å svare på denne innvendingen på Humes vegne.”</em></p>
+<section id="innledning" class="level3" data-number="7.1.1">
+<h3 data-number="7.1.1" class="anchored" data-anchor-id="innledning"><span class="header-section-number">7.1.1</span> Innledning</h3>
+<p>David Hume var ein skotsk empirist, som gjennom sitt syn og tankar har hatt stor innflytelse på moderne vitskapsfilosofi (Norton, D. F., &amp; Taylor, J. (2008), kap 1). Sjølv om Hume sine meningar og tankar har vekket ein rekkje spørsmål og debatter frå hans levetid til nå, er det nok hans skepsis og analyse av årsak og induksjon som har fått mest merksemd (Norton, D. F., &amp; Taylor, J., s.214-221).</p>
+</section>
+<section id="humes-argument-mot-induksjon" class="level3" data-number="7.1.2">
+<h3 data-number="7.1.2" class="anchored" data-anchor-id="humes-argument-mot-induksjon"><span class="header-section-number">7.1.2</span> Humes argument mot induksjon</h3>
+<p>Induksjon er ein vitskapleg metode som forsøker å trekke generelle lovar eller prinsipp basert på enkelte observasjonar (Tranøy, 2021), for eksempel: “Eg brand meg når eg tok på flammene, derfor er flammer varme.”. Hume mente at det ikkje er mogleg å fastslå årsaksforholdet som vi erfarer gjennom sansane våre, som eksempelet med flammene over, men på grunn av vår gjentatte erfaring med at det er ein konstant samanheng mellom to typar hendingar, så antar vi at det eine er årsaka til den andre (Hume, 2019, s.27-28).</p>
+<p>Ein forutsetning for at konklusjonen i mitt induktive argument over skal holde, er at det ikkje skjer ein endring i naturens gang. Denne førestillinga om likskap mellom observerte (fortida) og uobserverte mønster (framtida), er kjent som uniformitetsprinsippet. Men, korleis kan mine tidlegare erfaringar med å brenne meg ved berøring av flammer legitimere ein slutning om at dette også vil inntreffe i framtida? Hume hevda at førestillinga om at framtida vil vere lik fortida ikkje kan bevisast utan å ende i ein sirkulær argumentasjon (Norton, D. F., &amp; Taylor, J., s.215). Dette skyldast at for å rettferdiggjere induksjon må man allereie forutsette det prinsippet man prøver å bevise, at framtida vil følgje same mønster som fortida.</p>
+<p>Hume hevdet at alle induktive argumenter bygger på førestillinga at framtidige hendingar vil følgje same mønster som tidlegare hendingar, og at denne førestillinga er ein forutsetning for å trekke induktive slutningar (Norton &amp; Taylor, 2008, s.215; Hume, 2019, s.38-39). Når eg konkluderer med at eg vil brenne meg når eg tar på flammer, baserer eg denne slutninga på førestillinga om at framtida vil likne på fortida. Hume påpekte at dette fører til ein sirkulær argumentasjon, sidan eg ikkje kan bevise min førestilling utan å allereie forutsette same mønsteret. Dette utgjer sjølve kjernen i Humes kritikk av induksjon, med at man kan ikkje rasjonelt grunngi bruken av induksjon utan å byggje på den same førestillinga vi forsøker å bevise.</p>
+</section>
+<section id="innvending-mot-hume-sitt-argument" class="level3" data-number="7.1.3">
+<h3 data-number="7.1.3" class="anchored" data-anchor-id="innvending-mot-hume-sitt-argument"><span class="header-section-number">7.1.3</span> Innvending mot Hume sitt argument</h3>
+<p>Selv om Hume påpeikte at vi ikkje kan observere eit nødvendige årsaksforhold mellom to hendingar, berre at ein hending følgjer ein anna, kan det innvendast mot dette premisset at naturvitskapen har vist at induktive slutningar fungerer påliteleg i praksis. For eksempel kan Newtons gravitasjonslov brukast til å forutsi at ein gjenstand vil falle mot jorda når den den har blitt sleppt. Sjølv om det kan vere vanskeleg å bevise nødvendige årsaksforhold direkte, kan ein hevde at den praktiske suksessen til naturvitskaplege lover, som Newtons gravitasjonslov, rettferdiggjer bruken av induksjon. Dette kjem tydeleg til uttrykk i vår evne til nøyaktig å forutsi framtidige hendingar, som planetbanar eller gjenstandar sin bevegelse på jorda, basert på tidlegare erfaringar.</p>
+</section>
+<section id="humes-respons-på-innvendinga" class="level3" data-number="7.1.4">
+<h3 data-number="7.1.4" class="anchored" data-anchor-id="humes-respons-på-innvendinga"><span class="header-section-number">7.1.4</span> Humes respons på innvendinga</h3>
+<p>Hume ville sannsynlegvis ha svart på innvendinga ved å fasthalde sin skepsis til at induksjon er basert på rasjonell fornuft. I staden ville han ha påpeikt at våre induktive slutningar kjem frå ein naturlig tilbøyelegheit til å forvente at framtida vil likne fortida, basert på vaner og førestellingsevne (Hume, 2019, s.48-49). Denne tilbøyelegheita til å trekke slutningar om framtida er det Hume kalte for customs, altså vaner (Hume, 2019, s.44). Sjølv om Hume ville ha oppretthaldt sin påstand om at induksjon ikkje er rasjonelt grunngitt, ville han også ha erkjent, i likskap med min innvending, at induksjon er avgjerande for vår praktiske suksess. Hume meinte at desse induktive slutningane, som bygger på vaner og erfaringar, er meir effektive for vår overleving og praktiske handlingar enn om vi skulle ha basert alle slutningar på rein rasjonalitet (David, H., 2019, s.57-58).</p>
+</section>
+</section>
+<section id="spørsmålet-2" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="spørsmålet-2"><span class="header-section-number">7.2</span> Spørsmålet 2</h2>
+<p><em>Gi en kort beskrivelse av falsifikasjonisme og si litt om hvorfor Popper var motivert til å utvikle denne teorien. Presenter så ett problem med teorien og vurder hvorvidt problemet kan løses.</em></p>
+<section id="innledning-1" class="level3" data-number="7.2.1">
+<h3 data-number="7.2.1" class="anchored" data-anchor-id="innledning-1"><span class="header-section-number">7.2.1</span> Innledning</h3>
+<p>Demarksjonsproblemet er eit grunnleggande tema innan vitskapsfilosofien, og det handlar om korleis vi kan skilje mellom vitskap og ikkje-vitskap. Dette skiljet er avgjerande for vår forståing av kva som reiknast som gyldig kunnskap, og har implikasjonar for områder som metafysikk og religion (Popper, K. R., 1959, s.34-39). Mange filosofer har forsøkt å definere klare kriterier for denne avgrensinga, og ein dei mest sentrale i denne debatten er Karl Popper.</p>
+</section>
+<section id="beskrivelse-av-falsifikasjonisme-og-poppers-motivasjon" class="level3" data-number="7.2.2">
+<h3 data-number="7.2.2" class="anchored" data-anchor-id="beskrivelse-av-falsifikasjonisme-og-poppers-motivasjon"><span class="header-section-number">7.2.2</span> Beskrivelse av falsifikasjonisme og Poppers motivasjon</h3>
+<p>Popper var ein markant kritikar av induksjon. Gjennom sin avvising av induksjonsprinsippet utfordra han ikkje berre empirisk vitskap sin grunnleggande metode, men også det tradisjonelle skiljet mellom vitskap og metafysisk spekulasjon (Popper, K. R., 1959, s.34). For Popper var ein vitskapeleg teori ikkje gyldig fordi den kunne verifiserast gjennom observasjonar, men fordi den kunne falsifiseres gjennom testing (Popper, K. R., 1959, s.40). Han hevdet at vitskapens rolle er ikkje å verifisere ein teori basert på enkeltobservasjonar eller erfaring, men å utvikle teoriar som kunne falsifiseres gjennom observasjonar eller eksperimenter (Popper, K. R., 1959, s.41-42, 47-48).</p>
+<p>Eit eksempel på ein vitskapelig teori er påstanden: “Newton sin lov om gravitasjon seie at steinen eg slipp vil falle mot bakken på grunn av tiltrekkinga mellom to masser.”. Denne påstanden er vitskapeleg fordi den kan testast og potensielt falsifiseres. Derimot vil påstanden “Steinen faller fordi universet bestemmer det.”, ikkje kunne falsifiseres og er dermed ikkje vitskapeleg.</p>
+<p>Popper var motivert til å utvikle falsifikasjonismen på grunn av dei svakheitene han såg i induktiv logikk. Han meinte at ideen om at generaliseringar basert på observasjonar kunne gi sikker kunnskap, var logisk problematisk. Som eit svar på dette utvikla han falsifikasjonsprinsippet, som metode for å sikre at teoriar kunne utfordrast og testast på ein måte som kunne avsløre deires potensielle moglegheiter for feil.</p>
+</section>
+<section id="utfordring-med-falsifikasjonisme" class="level3" data-number="7.2.3">
+<h3 data-number="7.2.3" class="anchored" data-anchor-id="utfordring-med-falsifikasjonisme"><span class="header-section-number">7.2.3</span> Utfordring med falsifikasjonisme</h3>
+<p>Sjølv om Popper sin falsifikasjonisme gir ein streng vitskapleg metode, gjenspeglar den ikkje alltid korleis vitskap faktisk utviklar seg. Ifølge Popper bør ein teori forkastast når den møter motstridne data, ettersom den då er falsifisert og dermed “bevist” å gjere feil. Popper var kritisk til bruken av tilpassingar og hjelpehypotesar som berre ble introdusert for å redde teoriar frå falsifikasjon, fordi dette kunne redusere falsifiserbarheita til teorien og dermed gjere den uvitskapleg (Popper, K. R., 1959, s.145).</p>
+<p>I praksis er det sjeldan forskarar forkastar ein teori ved første teikn til motstridene data. Ofte vel dei å gjere tilpassingar eller forbetrar teoriane med hjelp av hjelpehypotesar. Dette skaper derfor eit misforhold mellom Popper sitt ideal om falsifikasjon og vitskapleg praksis, der teoriar ofte justerast i staden for å bli forkasta umiddelbart. Eit eksempel på dette er Newton sine lover om bevegelse, som ble revidert fleire gangar gjennom historia. Sjølv om Newtons lover forklarte bevegelse i dei fleste praktiske situasjonar med høy presisjon, viste dei seg utilstrekkelege for å beskrive bevegelse i ekstreme forhold som ved svært høge hastigheiter. I staden for å forkaste lovene, ble dei utvida og korrigert av Albert Einstein for å forklare avvika. Dette er eit eksempel på korleis vitskapen i praksis ofte justerer teoriar framfor å forkaste dei umiddelbart.</p>
+</section>
+<section id="poppers-løsning" class="level3" data-number="7.2.4">
+<h3 data-number="7.2.4" class="anchored" data-anchor-id="poppers-løsning"><span class="header-section-number">7.2.4</span> Poppers løsning</h3>
+<p>Popper erkjenner denne utfordringa, men hevder at ho kan løysast ved å følgje strenge metodologiske regler (Popper, 1959, s.81-84, 145). Han argumenterer for at tilpassingar som berre løyser eit enkelt problem i ein teori, såkalla ad hoc-hypotesar, bør unngåast, da dei svekkjer teoriens vitskaplege verdi. Modifikasjonar som fører til nye, testbare predikasjonar er derimot akseptable, ettersom dei styrkjer teorien ved å gjere den meir falsifiserbar (Popper, 1959, s.83). Vidare framhevar Popper prinsippet om sparsommeligheit, kjent som Ockhams barberkniv, som tilseier at man bør unngå unødvendig antakingar for å forhindre at teoriar blir unødig komplekse (Store norske leksikon, 2005-2007).</p>
+<p>Sjølv om disse reglene gir ein metodologiske løysning på problemet, kan dei vere betre eigna som ideal enn som praktiske verktøy i vitskapeleg praksis. Vitskapen i praksis er meir fleksibel og kompleks enn det Popper førestilte seg, og det er ikkje like enkelt å vite når man bør forkaste ein teori og når man burde revidere den.</p>
+</section>
+<section id="konklusjon" class="level3" data-number="7.2.5">
+<h3 data-number="7.2.5" class="anchored" data-anchor-id="konklusjon"><span class="header-section-number">7.2.5</span> Konklusjon</h3>
+<p>Sjølv om falsifikasjonisme i teorien seie at ein teori skal forkastast ved motstridande data, viser vitskapleg praksis at teoriar ofte modifiserast og tilpassast i staden. Dette reflekterer vitskapens natur som ein kontinuerleg prosess med prøving, feil, og forbetring, og at falsifikasjon i praksis viser seg å vere ein meir gradvis og fleksibel prosess enn det Poppers opprinnelege modell antydar.</p>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./05-repeated-measurements.html" class="pagination-link" aria-label="Assignment 5: Analyzing repeated measured experiments">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Assignment 5: Analyzing repeated measured experiments</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./07-laboratory-report.html" class="pagination-link" aria-label="Mitt dokument">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Mitt dokument</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

@@ -1,9 +1,16 @@
 ---
-title: "Mitt dokument"
-format: html
-editor: 
-  markdown: 
-    wrap: 72
+title: "Laboratory Report"
+author: "Sivert Helland Veseth"
+format: 
+  html:
+    number-sections: true
+    toc: true
+    code-fold: true
+execute: 
+  warning: false
+crossref:
+  fig-title: "Figur"
+  tbl-title: "Tabell"
 ---
 
 Molecular Laboratory report
