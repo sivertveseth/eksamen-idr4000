@@ -13,21 +13,17 @@ crossref:
   tbl-title: "Tabell"
 ---
 
-# Assignment 1: Reliability and tools for reproducible data science {#assignment1}
+# Reliabilitet
 
-The purpose of this assignment is to present estimates of reliability of measures collected in the physiology lab. A second purpose is to use tools for reproducible data science. The report that you are expected to hand in therefore has some strict requirements in its format (see [assignment description](https://dhammarstrom.github.io/quant-methods-workshops/assignment-1.html)). The assignment is a group assignment and at least three students are expected to contribute to each report.
+## Introduksjon
 
-## Elements of the report
+I 2005 satte John Ioannidis forskningsverden på prøve med utsagnet om at de fleste publiserte forskningsfunn er feilaktig (@RN1953). Han fremhevet mangel på reliabilitet som en sentral utfordring, der forskeres fleksibilitet i studiedesign og analyser bidrar til resulateter som ikke kan reproduseres. Reliabilitet referer her til muligheten for å gjenskape studier og oppnå lignende resultater (@RN2902, s.342-348). 
 
-**Importantly, the report should contain:**
+Reliabilitet av en test kan kvantifiseres på flere måter, blant annet som variasjonen innen samme person, endring i gjennomsnitt og retest-korrelasjon (korrelasjonen mellom målinger ved gjentatte tester) (@RN130, s.2). Endring i gjennomsnitt viser hvordan tilfeldige eller systematiske faktorer, som læringseffekter, påvirker forskjellen mellom to tester. Retest-korrelasjon vurderer hvor godt en test reproduserer rangeringen av deltakere ved gjentatte forsøk. (@RN130, s.2). 
 
-- At least one table (created from your data)
-- At least one figure (created from your data), and
-- data presented in the text.
-- The report should use a bibliography file to manage references.
+Den tredje måten, variasjon innen samme person, er særlig viktig for å forstå reliabiliteten til målinger. Denne variasjonen fanger opp tilfeldige forskjeller mellom målinger på samme individ og kvantifiseres som standardavviket til de individuelle verdiene, også kjen som "typical error" eller "standard error of measurement" (@RN130, s.2)."Typical error" kan forstås som variasjonen man vil forvente å observere fra forsøk x til forsøk y ved repeterte forsøk hos samme testdeltakere. 
 
-**Mangler introduksjon!!**
-
+I denne rapporten vil VO2-maks data fra fysiologi-laben bli analysert for å kvantifisere reliabilitet i form av "typical error". Gjennomføring og standardisering av testene vil bli forklart under metode, mens resultatene vil bli presentert med hovedvekt på betydningen av "typical error" for reliabiliteten til målingene.  
 
 ## Metode - gjennomføring av VO^2^max test
 
@@ -100,13 +96,16 @@ The purpose of this assignment is to present estimates of reliability of measure
 -   Samme testprotokoll ved alle testene:
     -   Her vil det være individuelle forskjeller, eks: start på 200W - 20W økning hvert minutt til utmattelse.
 
-## Intern validering
+## Resultat
 
-Både tekniske og biologiske faktorer kan potensielt påvirke resultatene og true den interne validiteten av testen [@Halperin]. Ved å beskrive og etablere testprosedyre samt standardisere testen, ønsker vi å skape rammer som sikrer at vi kontrollerer for mulige konfunderende faktorer som kan påvirke testprestasjon. Dette vil bidra til å redusere variasjoner og sikre at resultatene reflekterer faktiske prestasjoner, snarere enn påvirkninger fra ytre faktorer.
+Her kan man bruke litt plass til å forklare at man har benyttet seg av et estimat som ikkje er påvirket av endringen i gjennomsnitt, da dette er et eget mål på reliabilitet, se tekst under:
 
-Selv om vi har jobbet for å sikre god intern validitet, er det faktorer som vil kunne påvirke resultatene grunnet individuelle forskjeller i måten å opptre som testleder, bruk av musikk, samt humør og mental status til testdeltager [@Halperin].
+- When a group of volunteers performs 2 or more trials, there is always a change in the mean value between trials. In the above example, the means in the first and second trial are 68.4 and 69.6, respectively, so there is a change in the mean of 1.2. Change in the mean is itself a measure of reliability that I discuss in more detail in the next section. I introduce the concept here to point out that, for almost all applications of reliability, it is important to have an estimate of typical error that is unaffected by a change in the mean. The values of the change score or difference score for each volunteer yield such an estimate: simply divide the standard deviation of the difference score by √2. In the above example, the difference scores are 5, -2, 6, 0 and -3; the standard deviation of these scores is 4.1, so the typical error is 4.1/√2 = 2.9. This method for calculating the typical error follows from the fact that the variance of the difference score (sdiff 2) is equal to the sum of the variances representing the typical error in each trial: sdiff 2 = s2 + s2, so s = sdiff/√2.
 
-## Tabeller og plots med datasett fra alle gruppene
+Begrunne valg av coefficient of variation:
+For many measurements in sports medicine and science, the typical error gets bigger as the value of the measure gets bigger.[3] For example, several trials on an ergometer for one athlete might yield power output with a mean and typical error of 378.6 ± 4.4W, whereas a stronger athlete performing the same trials might produce 453.1 ± 6.1W. Although the absolute values of the typical errors are somewhat different, the values expressed as a percentage of their respective means are similar: 1.2 and 1.3%. This form of the typical error is a coefficient of variation. It is sometimes more applicable to every participant than the raw typical error. As a dimensionless measure, it also allows direct comparison of reliability of measures irrespective of calibration or scaling. Thus it facilitates comparison of reliability between ergometers, analysers, tests or populations of volunteers. I will refer to it in plain language as the typical percentage error.
+
+### Tabeller og plots med datasett fra alle gruppene
 
 ```{r}
 #| message: false
@@ -215,4 +214,20 @@ dat |>
 
 ```
 
+## Diskusjon
+
+Ta med hva for faktorer som fører vanligvis til variasjonen i målingene, ref:
+*The variation represented by typical error comes from several sources. The main source is usually biological. For example, an individual’s maximum power output changes between trials because of changes in mental or physical state. Equipment may also contribute noise to the measurements, although in simple reliability studies this technological source of error is often unavoidably lumped in with the biological error. When the same individual is retested on different equipment or by different operators, additional error due to differences in the calibration or functioning of the equipment or in the ability of the operators can surface. An analogous situation occurs when different judges rate the same athlete in different locations.*
+
+Bruke teksten under til å begrunne valget av testdeltagere:
+- In most situations where reliability is an issue, we are interested in the simple question of reproducibility of an individual’s values obtained on the same piece of equipment by the same operator. To estimate typical error in these situations, we usually use many participants and a few trials rather than 1 participant and many trials. For example, for 5 participants in 2 trials, with the values shown in table I, the typical error is 2.9. We can still interpret the typical error of 2.9 as the variation we would expect to see from trial to trial if any one of these participants performed multiple trials.
+
+### Intern validering
+
+Både tekniske og biologiske faktorer kan potensielt påvirke resultatene og true den interne validiteten av testen [@Halperin]. Ved å beskrive og etablere testprosedyre samt standardisere testen, ønsker vi å skape rammer som sikrer at vi kontrollerer for mulige konfunderende faktorer som kan påvirke testprestasjon. Dette vil bidra til å redusere variasjoner og sikre at resultatene reflekterer faktiske prestasjoner, snarere enn påvirkninger fra ytre faktorer.
+
+Selv om vi har jobbet for å sikre god intern validitet, er det faktorer som vil kunne påvirke resultatene grunnet individuelle forskjeller i måten å opptre som testleder, bruk av musikk, samt humør og mental status til testdeltager [@Halperin].
+
 Ifølge Hopkins (2000) er "typical error" den gjennomsnittlige variasjonen ved en test. Typical error gir en indikasjon på den forventede variasjonen ved en retest. I dette tilfellet hvor vi ser på watt.max, kan en forvente at watt.max ved neste test vil variere med `r cv_perc` % [@Hopkins].
+
+Vurder om man skal ha med et avsnitt om limits of agreement. 
