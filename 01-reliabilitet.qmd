@@ -21,86 +21,128 @@ I 2005 satte John Ioannidis forskningsverden på prøve med utsagnet om at de fl
 
 Reliabilitet av en test kan kvantifiseres på flere måter, blant annet som variasjonen innen samme person, endring i gjennomsnitt og retest-korrelasjon (korrelasjonen mellom målinger ved gjentatte tester) (@RN130, s.2). Endring i gjennomsnitt viser hvordan tilfeldige eller systematiske faktorer, som læringseffekter, påvirker forskjellen mellom to tester. Retest-korrelasjon vurderer hvor godt en test reproduserer rangeringen av deltakere ved gjentatte forsøk. (@RN130, s.2). 
 
-Den tredje måten, variasjon innen samme person, er særlig viktig for å forstå reliabiliteten til målinger. Denne variasjonen fanger opp tilfeldige forskjeller mellom målinger på samme individ og kvantifiseres som standardavviket til de individuelle verdiene, også kjen som "typical error" eller "standard error of measurement" (@RN130, s.2)."Typical error" kan forstås som variasjonen man vil forvente å observere fra forsøk x til forsøk y ved repeterte forsøk hos samme testdeltakere. 
+Den tredje måten, variasjon innen samme person, er særlig viktig for å forstå reliabiliteten til målinger. Denne variasjonen fanger opp tilfeldige forskjeller mellom målinger på samme individ og kvantifiseres som standardavviket til de individuelle verdiene, også kjent som "typical error" eller "standard error of measurement" (@RN130, s.2)."Typical error" kan forstås som variasjonen man vil forvente å observere fra forsøk x til forsøk y ved repeterte forsøk hos samme testdeltakere. 
 
-I denne rapporten vil VO2-maks data fra fysiologi-laben bli analysert for å kvantifisere reliabilitet i form av "typical error". Gjennomføring og standardisering av testene vil bli forklart under metode, mens resultatene vil bli presentert med hovedvekt på betydningen av "typical error" for reliabiliteten til målingene.  
+I denne rapporten vil V<sub>2max</sub>-maks data fra fysiologi-laben bli analysert for å kvantifisere reliabilitet i form av "typical error" av maksimal watt oppnådd under testen. Gjennomføring og standardisering av testene vil bli forklart under metode, mens resultatene vil bli presentert med hovedvekt på betydningen av "typical error" for reliabiliteten til målingene.  
 
-## Metode - gjennomføring av VO^2^max test
+## Metode
 
-### Utstyr som ble benyttet
+Dataene som skal brukes for å måle reliabilitet er hentet fra 16 ulike testpersoner som gjennomførte gjentatte V<sub>2max</sub>-makstest på ergospirometri på fysiologilaben. Det ble satt opp slik at alle skulle gjennomføre testen fire ganger spredd utover to uker, men det var kun åtte stk som gjennomførte fire tester. Det ble gjort antropmeteriske mål av testpersonene før hver test, men i @tbl-testantro er det kun tatt utgangspunkt i målingene før første test. Totalt var det 14 stk som hadde baseline målinger som ble inkludert i @tbl-testantro.
 
--   Biosen (for måling av laktat)
-    -   lansett finger
-    -   rør for oppsamling av blod
-    -   blandingscontainer for rør med blod
-    -   papir for å tørke av finger
--   Vyntus (for måling av metabolsk respons)
-    -   miksekammer
-    -   turbin
-    -   slange fra miksekammer til munnstykke
-    -   neseklype (teipbit på nese for at neseklype skulle sitte godt)
-    -   gassbeholder med referansegass
--   Lode-sykkel
-    -   Samme oppsett på sykkel ved hver test (høyde sete, avtsand sete til styre, osv.). Oppsettet lagres på data etter innstilling ved t1.
-    -   MTB pedaler
-    -   172,5 mm lengde krankarmer
--   Gulvvifte (samme instilling ved hver test)
--   Pulsbelte garmin
--   Hansker
--   Minnepenn for overføring av data
+```{r}
+#| echo: false
+#| label: tbl-testantro
+#| tbl-cap: "Karakteristikkene på testpersonene"
 
-### Forberedelse og kalibrering av utstyr
+library(readxl)
+library(tidyverse)
+library(gt)
+library(magrittr)
 
-1.  Sørg for at Biosen er på, og at det er nok væske i kalibreringssolution (rød flaske). Sett igang kalibrering av Biosen om det er nødvendig.
-2.  Ta med nødvendig laktatutstyr bort til sykkelen, herunder: lansett, rør for oppsamling av blod og papir.
-3.  Kalibrering av Vyntus CPX
-    a.  Skru på kalibreringsgassen.
-    b.  Se til at turbin er koblet til sampling slange og optoelektronisk måler.
-    c.  Koble til kalibreringsporten på CPX-en og kjør både volum- og gasskalibrering. OBS! Ved differanse på over 2% under volumkalibrering eller differanse over 0.2% differanse under gasskalibrering, gjennomfør nødvendig feilsøking og kjør kalibrering på nytt.\
-4.  Ta på hansker og sett sammen munnstykke. Dekk til munnstykket med papir med hjelp av neseklype.
-5.  Ta med munnstykke og slange bort til sykkel og Vyntus CPX. Fest munnstykke til slange, og slange til miksekammer.
-6.  Legg til ny eller velg aktuell testdeltager.
-    a.  Ny testdeltager legges til, og følgende ID-informasjon legges til under fornavn, etternavn og personnummer: idr4000_h24_gr4_idxx (xx=nr).
+df_all <- read_xlsx("data/plot_data_all_gr.xlsx") %>% 
+  mutate(w.max = as.numeric(w.max), 
+         la.max = as.numeric(la.max), 
+         hr.max = as.numeric(hr.max), 
+         rer.max = as.numeric(rer.max))
 
-### Forberedelse av testdeltager
+baseline_df_all <- df_all %>%
+  filter(timepoint == "t1") %>% # Filtrer for timepoint == t1
+  select(sex, age, weight, height) %>% # Velg kolonner for tabellen
+  group_by(sex) %>% # Gruppér etter kjønn
+  summarise(
+    N = n(), # Antall deltakere (unik for t1)
+    Alder = sprintf("%.1f (%.1f)", mean(age, na.rm = TRUE), sd(age, na.rm = TRUE)),
+    Vekt = sprintf("%.1f (%.1f)", mean(weight, na.rm = TRUE), sd(weight, na.rm = TRUE)),
+    Stature = sprintf("%.0f (%.0f)", mean(height, na.rm = TRUE), sd(height, na.rm = TRUE)),
+    .groups = "drop"
+  ) %>% 
+  # Konverter alle kolonnene til karakter for å unngå datatypeproblemer i pivot_longer
+  mutate(across(everything(), as.character)) %>%
+  pivot_longer(cols = c(N, Alder, Vekt, Stature), names_to = "Variable", values_to = "Value") %>% 
+  pivot_wider(names_from = sex, values_from = Value)
 
--   Informasjon fra testansvarlig til testdeltaker vedrørende hvordan test skal gjennomføres:
-    -   VO2max test der vi starter på en gitt watt (motstand). Watten vil øke hvert minutt (hvor mye avhenger av protokoll) og testdeltaker sykler helt til han/hun ikke greier mer.
-    -   Test avsluttes dersom tråkkfrekvens \< 60 rpm.
-    -   Test skal gjennomføres sittende
-    -   Borg skala benyttes når utmattelse inntreffer hos testdeltaker. Deltaker vil bli spurt om å gi et tall fra 6-20 på hvor sliten han/hun er, der 6 er "ingen anstrengelse" og 20 er "maksimal anstrengelse".
-    -   Underveis i test vil testdeltaker ha tilgang på hvor lenge han/hun har syklet.
-    -   Testdeltaker informeres om at testleder kun vil informere om hvor lenge det er til neste økning og hvilken watt som sykles på for øyeblikket. Annen data som puls, VO2, osv., vil ikke utøver ha tilgang på underveis i test.
-    -   Testleder vil mot slutten av test bidra til å pushe testdeltaker slik at han/hun får ut sitt ytterste. Hvordan denne "pushingen" gjennomføres vil variere fra testleder til testleder. Det viktige er at testleder oppfører seg tilnærmet likt ved hver test ovenfor den aktuelle testdeltaker.
+# Endre kolonnenavn fra k og m til Kvinne og Mann
+baseline_df_all <- baseline_df_all %>%
+  rename(Kvinne = k, Mann = m)
 
-### Når testdeltaker er ferdig å sykle
+# Lag tabellen
+kable(baseline_df_all, row.names = FALSE, col.names = c("", "Kvinne", "Mann"))
+```
 
--   Testleder har nå spurt om Borgs skala
--   Etter 1 min tas en laktatprøve av testdeltaker for å estimere la.max. Prøver plasseres i beger med løsning før den vendes og plasseres i Biosen for måling.
--   Noterer ned hvor lenge deltaker syklet og henter så ut resten av data fra test via rapport på vyntus.
--   Data som er hentet ut er formatert i excel. Deretter benyttet vi read_xlsx for å importere datafilen til R.
 
-## Standardisering av test
+Deltakerne ble delt opp i grupper, der en var testdeltaker, en skulle være testansvarlig, og de resterende var observatører som også hjalp testansvarlig med praktiske oppgaver. Det ble rulert på hvem som var testperson, testansvarlig og observatører, slik at alle fikk være testansvarlig. 
 
--   Matinntak:
-    -   siste store måltid senest 2 timer før teststart. Tillatt å spise èn mindre karbohydratkilde senest 30 min før test, dvs. èn banan, èn bar, èn gel, osv.
--   Koffeininntak:
-    -   inntak som normalt.
--   Test gjennomføres på samme tidspunkt på dagen ved alle tester
--   Søvn/døgnrytme:
-    -   forsøk å opprettholde normal døgnrytme gjennom testperioden.
--   Trening:
-    -   ingen hard trening på underkropp dagen før test.
--   Oppvarmingsprotokoll:
-    -   5 min oppvamring, der deltageren sykler på økende intensitet i 2-2-1 min, eks: (2 min 150W, 2 min 175W, 1 min 220W)
--   Samme testprotokoll ved alle testene:
-    -   Her vil det være individuelle forskjeller, eks: start på 200W - 20W økning hvert minutt til utmattelse.
+### Utstyr og kalibrering 
+
+For å måle den metabolske responsen under testen ble miksekammeret fra Vyntus CPX benyttet. Nødvendig volum- og gasskalibrert ble utført før hver test i henhold til produsenten sine retningslinjer. Ved differanser på over 2% under volumkalibrering eller over 0.2% under gasskalibrering ble nødvendig feilsøking igangsatt. Dette inkluderte kontroll for skader på turbinen eller sampleslangen, sjekk av gasskoblinger, samt inspeksjon for fukt i sampleslange og andre relevante faktorer. 
+
+I tillegg til måling av metabolsk respons ble laktatnivå målt etter ett minutt etter testslutt. Blodprøver ble samlet fra fra pekefingeren ved hjelp av en lansett, og laktat ble analysert med Biosen fra EKF Diagnostics. Apparatet hadde en innebygd timer som varslet behov for ny kalibrering hver time.
+
+Testpersonene syklet på en ergometersykkel fra Lode. Tilpasning av sykkelen, som høyde på sete eller avstand mellom sete og styre, ble gjort før den første testen. Disse innstillingene ble lagret i Lode sin programvare, slik at hver testperson hadde standardisere sykkelinnstillinger ved alle tester. Alle sammen skulle benytte seg av MTB-pedaler ("Mountain Bike-pedaler") og ha 172,5 mm lengde på kranarmene. En vifte ble plassert foran sykkelen for å gi testpersonene mulighet til avkjøling underveis i testen. Samme innstilling på viften ble brukt ved hver test for å sikre standardisering. Puls ble registrert ved hjelp av et Garmin pulsbelte, som var tilkoblet programvaren SentrySuite fra Vyntusen. 
+
+### Forberedelser av testdeltakeren
+
+Før testingen ble det etablert retningslinjer for mat- og drikkeinntak, døgnrytme, trening og oppvarming. Testpersonene ble oppfordret til å opprettholde normal døgnrytme gjennom de to ukene testene pågikk. Det ble spesifisert at siste hovedmåltid skulle inntas senest to timer før teststart, men det var tillat å spise en mindre karbohydratkilde som en banan, en bar eller en gel, opptill 30 min før testen. Deltakerne ble også bedt om å opprettholde sitt vanlige koffeininntak og sørge for å være i væskebalanse. oppvarmingen besto av 5 min på ergometersykkel, hvor intensiteten gradvis ble økt: de første 2 minuttene på en bestemt watt (for eksempel 150W), de neste 2 minuttene på høyere intensitet (175W), og det siste minuttet, eksempelvis på endå høyere intensitet (220W). Selv om intensiteten ble tilpasset individuelt, skulle den samme oppvarmingsprotokoll følges ved hver test. 
+
+
+
+### Testgjennomføring
+
+Testen startet på en gitt watt (motstand), som for hvert minutt økte gradvis helt til testpersonen ikke mestret å sykle lengre (ramp protokoll). Hva watt man startet på og hvor mye den økte per minutt, varierte fra person til person på bakgrunn av treningsbakgrunn. Hele testen skulle gjennomføres sittende, og ved en tråkkfrekvens på under 60 rpm (rate per minute) eller om testpersonen reiste seg fra setet, ble testen avsluttet. Testansvarlig skulle kun informere om hvor lenge det var til neste økning og hvilken watt det ble syklet på. Informasjon som puls, V<sub>2max</sub> eller andre parametre fikk testpersonen ikke tilgang til underveis i testen. Mot slutten av testen skulle testansvarlig bidra til å motivere testpersonen slik at han/hun tok ut sitt ytterste. Hvordan testansvarlige valgte å løse dette varierte, men det viktigste var at han/hun oppførte seg tilnærmet lik ved hver test ovenfor den som syklet. 
+
+Rett etter testslutt ble testpersonen spurt om Borg skala for å beskrive grad av anstrengelse. Han/hun ble spurt på å oppgi et tall mellom 6-20 på hvor sliten han/hun er, der 6 er "ingen anstrengelse" og 20 er "maksimal anstrengelse". Laktatprøve ble tatt etter ett minutt, og plassert i beger med løsning før den ble vendt og satt i Biosen for måling. Testansvarlig noterte ned hvor lenge testpersonen syklet og hva watt han/hun endte på. 
+
+### Datahåndtering
+
+Rådata om metabolsk respons ble samlet inn med programvare fra Vyntus og eksportert til Excel for en første organisering. Testens varighet og sluttwatt ble manuelt registrert av testansvarlig i samme excel-fil. Videre datahåndtering, som filtrering, visualisering og beregninger av gjennomsnitt, standardavvik og "typical error", ble utført i R (versjon 4.4.1). Manglende data ble håndtert ved ekskludering av ufullstendige rader for variabler som var sentrale for analysene. 
+
 
 ## Resultat
+
+Først vise frem gjennomsnittlige verdier med standardavvik av alle variablene. Få variablene som rader og timepoints som kolonner. 
+
+```{r}
+library(dplyr)
+library(knitr)
+
+# Opprett tabellen med formatert gjennomsnitt ± standardavvik
+summary_table <- df_all %>%
+  select(timepoint, w.max, vo2.max, vco2.max, rer.max, ve.max, bf.max, hr.max, la.max, borg.max) %>%
+  group_by(timepoint) %>%
+  summarise(across(everything(), 
+                   list(mean = ~ mean(.x, na.rm = TRUE), 
+                        sd = ~ sd(.x, na.rm = TRUE)), 
+                   .names = "{col}_{fn}")) %>%
+  pivot_longer(
+    cols = -timepoint, 
+    names_to = c("variable", "statistic"),
+    names_sep = "_",
+    values_to = "value"
+  ) %>%
+  pivot_wider(
+    names_from = statistic, 
+    values_from = value
+  ) %>%
+  mutate(value = paste0(round(mean, 1), " (", round(sd, 1),")")) %>%
+  select(-mean, -sd) %>%
+  pivot_wider(
+    names_from = timepoint, 
+    values_from = value
+  )
+
+# Vis tabellen med enkel styling
+kable(summary_table, row.names = FALSE)
+```
+
+Kan deretter trekke frem en figur som viser gjennomsnittlig maksimal watt for de ulike tidspunktene med standardavvik - gir en oversikt over variasjonen og trend i maksimal watt over gjentatte tester. 
+
 
 Her kan man bruke litt plass til å forklare at man har benyttet seg av et estimat som ikkje er påvirket av endringen i gjennomsnitt, da dette er et eget mål på reliabilitet, se tekst under:
 
 - When a group of volunteers performs 2 or more trials, there is always a change in the mean value between trials. In the above example, the means in the first and second trial are 68.4 and 69.6, respectively, so there is a change in the mean of 1.2. Change in the mean is itself a measure of reliability that I discuss in more detail in the next section. I introduce the concept here to point out that, for almost all applications of reliability, it is important to have an estimate of typical error that is unaffected by a change in the mean. The values of the change score or difference score for each volunteer yield such an estimate: simply divide the standard deviation of the difference score by √2. In the above example, the difference scores are 5, -2, 6, 0 and -3; the standard deviation of these scores is 4.1, so the typical error is 4.1/√2 = 2.9. This method for calculating the typical error follows from the fact that the variance of the difference score (sdiff 2) is equal to the sum of the variances representing the typical error in each trial: sdiff 2 = s2 + s2, so s = sdiff/√2.
+
+Her ha en tabell eller et plot som viser gjenomsnittet for hver ID og deres typical error. Fin overgang til å da i neste avsnitt snakke om coeffievient of variation.
+
 
 Begrunne valg av coefficient of variation:
 For many measurements in sports medicine and science, the typical error gets bigger as the value of the measure gets bigger.[3] For example, several trials on an ergometer for one athlete might yield power output with a mean and typical error of 378.6 ± 4.4W, whereas a stronger athlete performing the same trials might produce 453.1 ± 6.1W. Although the absolute values of the typical errors are somewhat different, the values expressed as a percentage of their respective means are similar: 1.2 and 1.3%. This form of the typical error is a coefficient of variation. It is sometimes more applicable to every participant than the raw typical error. As a dimensionless measure, it also allows direct comparison of reliability of measures irrespective of calibration or scaling. Thus it facilitates comparison of reliability between ergometers, analysers, tests or populations of volunteers. I will refer to it in plain language as the typical percentage error.
