@@ -136,7 +136,27 @@ kable(summary_table, row.names = FALSE)
 
 Kan deretter trekke frem en figur som viser gjennomsnittlig maksimal watt for de ulike tidspunktene med standardavvik - gir en oversikt over variasjonen og trend i maksimal watt over gjentatte tester. 
 
+```{r}
 
+summary_data <- df_all %>%
+  group_by(timepoint) %>%
+  summarise(
+    mean_watt = mean(w.max, na.rm = TRUE),
+    sd_watt = sd(w.max, na.rm = TRUE)
+  )
+
+ggplot(summary_data, aes(x = timepoint, y = mean_watt))+
+  geom_line() +
+  geom_point() +
+  geom_errorbar(aes(ymin = mean_watt - sd_watt, ymax = mean_watt + sd_watt),
+                width = 0.2) +
+  labs(
+    title = "Gjennomsnittlig makasimal watt med standardavvik",
+    x = "Tidspunkt",
+    y = "Watt"
+  ) +
+  theme_minimal()
+```
 Her kan man bruke litt plass til å forklare at man har benyttet seg av et estimat som ikkje er påvirket av endringen i gjennomsnitt, da dette er et eget mål på reliabilitet, se tekst under:
 
 - When a group of volunteers performs 2 or more trials, there is always a change in the mean value between trials. In the above example, the means in the first and second trial are 68.4 and 69.6, respectively, so there is a change in the mean of 1.2. Change in the mean is itself a measure of reliability that I discuss in more detail in the next section. I introduce the concept here to point out that, for almost all applications of reliability, it is important to have an estimate of typical error that is unaffected by a change in the mean. The values of the change score or difference score for each volunteer yield such an estimate: simply divide the standard deviation of the difference score by √2. In the above example, the difference scores are 5, -2, 6, 0 and -3; the standard deviation of these scores is 4.1, so the typical error is 4.1/√2 = 2.9. This method for calculating the typical error follows from the fact that the variance of the difference score (sdiff 2) is equal to the sum of the variances representing the typical error in each trial: sdiff 2 = s2 + s2, so s = sdiff/√2.
