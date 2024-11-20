@@ -27,7 +27,7 @@ Formålet med dette eksperimentet er å bruke og demonstrere Western Blot som en
 
 ## Metode
 
-Muskelprøvene som ble brukt i dette eksperimentet, ble hentet fra m. vastus lateralis på høyre og venstre lår hos testpersoner. Høyre ben gjennomførte styrketrening, mens venstre ben fungerte som kontroll. Prøvene ble samlet inn på ulike tidspunkter etter trening for å vurdere tidsavhengige endringer: én prøve ble tatt 10 minutter etter trening (HE), en annen 30 minutter etter (LØ), og den siste 60 minutter etter (T). Før Western blot (WB)-analysen ble muskelprøvene homogenisert for å frigjøre proteiner. Fremgangsmåten for homogenisering og WB er detaljert beskrevet i den følgende delen.
+Muskelprøvene som ble brukt i dette eksperimentet, ble hentet fra m. vastus lateralis på høyre og venstre lår hos testpersoner. Høyre ben gjennomførte styrketrening, mens venstre ben fungerte som kontroll. Prøvene ble samlet inn på ulike tidspunkter etter trening for å vurdere tidsavhengige endringer: én prøve ble tatt 10 minutter etter trening (HE), en annen 30 minutter etter (LØ), og den siste 60 minutter etter (T). Før Western blot (WB)-analysen ble muskelprøvene homogenisert for å frigjøre proteiner. Fremgangsmåten for homogenisering og WB er detaljert beskrevet i den følgende delen. Kodene som er blitt brukt for å lage tabeller ligger vedlagt nederst under overskriften "Koder", som ligger etter konklusjonen.
 
 ### Homogenisering av muskelprøver
 
@@ -41,248 +41,301 @@ For å måle proteinkonsentrasjonen ble det utført en fortynning av prøvene. E
 
 Bradford Assay-metoden benytter fargestoffet Coomassie Brilliant Blue G-250, som binder seg til proteiner og gir en fargeendring som er proporsjonal med proteinkonsentrasjonen [@Noble2008]. For å kvantifisere proteinkonsentrasjonen laget vi en standardkurve basert på bovint serumalbumin (BSA), som fungerer som en referanse. Absorbansen til prøvene ble målt ved 595 nm ved hjelp av et spektrofotometer. Dette gjorde det mulig å fastslå om prøvene inneholdt lave eller høye konsentrasjoner av proteiner, med grunnlag i sammenligning med standardkurven [@Noble2008, kap 8].
 
-Protokollen som ble brukt for homogenisering og Bradford Assay er basert på generelle metoder for vevshomogenisering, med enkelte tilpasninger. Eventuelle avvik og spesifikke observasjoner er dokumentert og diskuteres videre i analysen.
-
-
 
 ### Western blot protokoll
 
-Selv om gruppen jobbet med en prøve, er WB-analysen blitt gjort på flere prøver fra 3 ulike testpersoner. For elektroforesen brukte vi Bio-Rad Criterion og en ferdiglaget gel. Selv om det ikke ble brukt en kalibreringskurve for å kvantifisere absolutt mengde p70S6K, ble intensitetsverdiene normalisert mot total proteinmengde og deretter brukt som en indikator for proteinaktivitet. Fosforyleringsnivået (p−p70/t−p70p) ble beregnet for å gi et relativt mål på aktivering av mTOR-signalveien.
+Selv om gruppen jobbet med en prøve, er WB-analysen blitt gjort på flere prøver fra 3 ulike testpersoner. For elektroforesen brukte vi Bio-Rad Criterion og en ferdiglaget gel. Selv om det ikke ble brukt en kalibreringskurve for å kvantifisere absolutt mengde p70S6K, ble intensitetsverdiene normalisert mot total proteinmengde og deretter brukt som en indikator for proteinaktivitet. Fosforyleringsnivået (p−p70/t−p70p) ble beregnet for å gi et relativt mål på aktivering av mTORC1-signalveien.
 
+De homogeniserte prøvene ble fortynnet til en endelig konsentrasjon på 1.5-2 μg/μl i Laemmli-bufer (Bio-Rad). Prøvene ble deretter denaturert ved oppvarming til 95 °C i 5 minutter før de ble avkjølt til romtemperatur. Proteinstandarder (Precision Plus Protein Dual Color Standards, fra Bio-Rad) ble brukt for å sikre nøyaktig beregning av proteinstørrelse. Prøvene ble lastet på en ferdiglaget Bio-Rad Criterion-gel, og elektroforese ble utført ved konstant spenning (300 V) i 30 minutter ved 4 °C, med bruk av Bio-Rad Running Buffer. 
 
-#### Solutions
-Buffer solution	Komponent	Konsentrasjon (mM)	Masse (g)
-TBS 1L 10x, pH 7.6 (HCI adjust)	
+En potensiell feil ble identifisert under prøvelastingen i brønn 5, hvor en prøve utilsiktet ble trukket tilbake i pipetten. Selv om alle væske ble overført til brønnen, kan dette ha resultert i blanding. Oversikt over de ulike brønnene er vist i @tbl-pipe, der brønn 2-6 er p-p70 og brønn 9-13 er t-p70.
 
-Tris Base
-NaCI
+```{r}
+#| warning: false
+#| message: false
+#| echo: false
+#| label: tbl-pipe
+#| tbl-cap: "Distribusjon av prøvene."
 
-	20 mM x 10 = 200 mM
-137 mM x 10 = 1.37 M	0.2 x 121.1 = 24.22 g
-1.37 x 58.44 = 80.06 g
-Running buffer 1L 10x, pH 8.3	 
 
-Tris Base
-Glycin
-SDS
+library(gt)
 
-	25 mM x 10 = 250 mM
-192 mM x 10 = 1.92 M
-3.5 mM x 10 = 35 mM	0.25 x 121.1 = 30.28 g
-1.92 x 75.07 = 144.1 g
-0.035 x 288.38 = 10.09 g
-Transfer buffer* 1L 10x	Tris Base
-Glycin	25 mM x 10 = 250 mM
-192 mM x 10 = 1.92 M	0.25 x 121.1 = 30.28 g
-1.92 x 75.07 = 144.1 g
+# Oppdatert datasett
+data <- data.frame(
+  Brønn = 1:14,
+  Innhold = c("M", "HE-L", "HE-R", "T-L", "T-R", "LØ-R", "M", "M", 
+              "HE-L", "HE-R", "T-L", "T-R", "LØ-R", "M")
+)
 
-* 1 x Transfer buffer = 100 ml TB stock x 10 + 100 ml methanol + 800 ml dH2O
+# Lag tabellen med forbedringer
+gt_table <- data %>%
+  gt() %>%
+  tab_header(
+    title = "Western Blot Brønndistribusjon"
+  ) %>%
+  cols_align(
+    align = "center",
+    columns = everything()
+  ) %>%
+  tab_source_note(
+    source_note = "Forklaringer: M = Markør, HE-L = Venstre ben (10 min), HE-R = Høyre ben (10 min), T-L = Venstre ben (60 min), T-R = Høyre ben (60 min), LØ-R = Høyre ben (30 min)"
+  )
 
+# Vis tabellen
+gt_table
 
+```
 
-#### Sample preparation
+Etter elektroforese ble prøvene først lagt i metanol i 2-10 minutter, for å gjøre det mulig for proteinene å binde seg mer effektivt. Deretter ble de overført til en PVDF-membran ved hjelp av en "wet blotting"-metode, hvor proteine ble drevet ut av gelen og overført til membranen under påvirkning av en elektrisk strøm i en bufferløsning [@Bass2017, s.10-12].Selve overføringen skulle etter protokollen bli utført ved konstant strøm (300 mA) i 3 timer ved romtemperatur, med en buffer bestående av 25 mM Tris, 192 mM glycin og 20% metanol, hvor metanol hjalp til med å stabilisere proteinene. Grunnet mangelende tid, ble det heller kjørt et hurtigprogram (100 V i 30 minutter). Dette kan ha redusert effektiviteten for større proteiner. Membranet ble deretter farget med MemCode Reversible Protein Stain for å visualisere om proteinene var blitt overført og jevnt fordelt. Fargingen ga også mulighet til å visualisere total proteinmengde og justere for variasjoner mellom prøvene i den neste analysen.
 
-- Muscle samples should be prepared in an appropriate sample buffer
-- Dilute samples to a final concentration of 1.5-2 μg/μl in Laemmlibuffer (Bio-Rad)
-- Boil samples for 5 min, 95°C (denaturation). Cool to room temp. prior to loading. Spin down condensate 
+Membranen ble blokkert i en 5 % melkebuffer (TBS-T) i 1 time ved romtemperatur for å redusere ikke-spesifikk binding. Primærantistoffet mot fosforylert p70S6K (p-p70S6K) ble inkubert over natten ved 4 °C, og deretter vasket grundig med TBS-T for å fjerne overskuddsantistoff. Sekundærantistoffet ble tilsatt i 2.5 % melkebuffer og inkubert i 1 time ved romtemperatur. Ufullstendig vask under dette trinnet kan ha ført til bakgrunnsstøy, da vaskingen ble utført av en annen person. 
 
+For å få frem signalene ble det benyttet ECL (Enhanced Chemiluminesscence) og bildeopptak på en Gel Doc-enhet [@Bass2017, s.18-19]. Kvantifisering av Western blot-resulatetene ble utført ved hjelp av densiometrisk analyse i programmet ImageJ. Den høyeste intensiteten av proteinbåndene for p-p70S6K og t-p70S6K ble målt og normalisert mot total proteinmengde for å korrigere for variasjoner i prøvene [@Bass2017, s.20-24]. Forholdet mellom p-p70S6K og t-p70S6K ble beregnet som en indikator på aktiveringen av mTORC1-signalveien. 
 
+De ulike løsningene som er blitt brukt, er listet opp nederst i oppgåven etter konklusjon.  
 
-#### Sample loading, gel electrophoresis 
-
-- Assemble electrophoresis chamber on ice, add buffer to limit-mark
-
-- Det ble brukt Running buffer
-
-- Add protein ladder/standard (5 μl)
-
-- Proteinstige: Precision Plus Protein Dual Color Standards, 500 µl #1610374
-- Pipetering gikk fint
-
-- Load samples according to pre-written load scheme (max. Loading capacity in GTX precast gels: 30 μl)
-
-- Pipeteringsfeil i brønn 5: trakk prøven tilbake i pipetten en gang. Fikk alt ut igjen, men kan ha blitt blandet.
-
-Brønn 2-6 er p-p70 og brønn 9-13 er t-p70. 
-
-1	2	3	4	5	6	7	8	9	10	11	12	13	14
-M	HE-L	HE-R	T-L	T-R	LØ-R	M	M	HE-L	HE-R	T-L	T-R	LØ-R	M
-
-M = Markør
-HE-L = Hennie venstre ben
-HE-R = Hennie høyre ben
-T-L = Trond venstre ben
-T-R = Trond høyre ben
-LØ-R = Lars høyre ben
-
-- Move electrophoresis chamber into 4 C. Top up buffer. Put on top lid.
-
-- Run gels: constant voltage, 30 min, 300 volt
-
-
-#### Protein transfer (blotting)
-
-- Disassemble gels and place them in transferbuffer 15-30 min
-
-- Prepare sandwich:
-
-Put sponges in dH2O to get rid of bubbles
-Put membranes (cut in upper left corner) in methanol to activate (5-10 min on shaker)
-Avklippet hjørne er ved brønn 18.
-Place sandwich in assembly tray – black side down. Squeeze dH2O from sponges and place them in transferbuffer – remove all bubbles
-Wet 2 filter papers in buffer, place them on top of gel and gently remove them together. Place filterpapers with gel on top of sponge. Remove bubbles
-Put membrane on top of gel. Careful with direction, membranes should be marked upper left corner. Remove bubbles
-Place the last sponge on top, close the sandwich
-Overføring til sandwich gikk fint, lav risiko for feilkilde.
-
-- Place the sandwich in transfer tray
-
-- Run transfer: Constant ampere/current 300 mA, 3 h 
-
-- Brukte hurtigprogram: 100V i 30 min.
-
-#### Stain for total protein and cut membrane
-
-- Mix destain solution with methanol 1:1 # 30:30 ml
-
-- Mix Eraser solution with methanol 1:1* 30:30 ml
-
-- Rinse the membrane quickly in dH2O
-
-- Add MemCode Sensitizer to the the membrane, place on shaker for 2 min. Decant solution,
-
-reuse 1 time
-
-- Add MemCode Reversible stain, on shaker 1 min. Decant. Reuse 1 time.
-
-- Destain by adding MemCode destain to membrane, rinse quickly 3 times
-
-- Add methanol/destain solution, on shaker, 5 min- Rinse with dH2O 4 times#
-
-- Image membrane
-
-- Cut the membrane. If multiple membranes, number each
-
-- Proceed with Eraser → Add eraser/methanol solution to the membrane on shaker, 10 min*
-
-- Rinse the membrane in dH2O 4 times. Store in TBS until cut
-
-- Cut membranes according to protein weight and/or wells used
-
-
-
-#### Blocking and primary antibody
-
-- Block the membrane in 2,5 % milk in TBS-T for 1 h at room temp
-
-- Brukte 5 % milk i TBS-T
-
-- Decant blocking solution, rinse in TBS
-
-- Add primary antibody (AB) in BSA/milk solution (5% in TBS-T), incubate over night in 4 C
-
-
-
-#### Antibody wash and secondary antibody - ble gjort av Vilde
-
-- Wash with TBS-T 2x1 min + 3x5 min
-
-- Unøyaktig vasking vil kunne føre til bakgrunnsstøy.
-
-- Add secondary AB in 2,5% milk with TBS-T for 1 h at room temp
-
-- Wash with TBS 4x5 min
-
-- Unøyaktig vasking vil kunne føre til bakgrunnsstøy.
-
-- Perform ECL
-
-o Mix working solution (Thermo super signal …)
-
-o Incubate membrane for 5 min at room temp
-
-o Cover blot in clear plastic wrap
-
-- Collect image on Gel Doc
-
-
-**Mulige avvik:**
-
-- Punkt 2.2.3: Pipeteringsfeil i brønn 5: trakk prøven tilbake i pipetten en gang. Fikk alt ut igjen, men kan ha blitt blandet.
-
-- Punkt 2.2.4: Brukte hurtigprogram: 100V i 30 min.
-
-- Punkt 2.2.7: En annen person utførte vaskingen - derfor ikke kontroll over dette. 
-
-- Punkt 2.2.8: En annen person utførte vaskingen - derfor ikke kontroll over dette. 
 
 ## Resultater
 
 Vi benyttet oss av WB-analyse for å kvantifisere total p70S6K og fosforlyert p70S6K, slik at vi kunne undersøke fosforyleringsnivået til proteinet i vastus lateralis til de ulike testpersonene. Intensiteten til fosforylert p70S6K (p-p70) og total p70S6K (t-p70) ble normalisert mot totalprotein fra membran blottet. Fosforyleringsnivået ble beregnet som forholdet mellom p-p70 og t-70 (p-p70 / t-p70). Intensitetsverdiene som presenteres i tabellene er basert på optisk tetthet fra Western blot-bildene. Verdiene representerer relative signalstyrker og har ingen absolutt måleenhet, da kalibreringskurve ikke ble benyttet. For å korrigere for variasjoner i proteinmengde mellom brønnene, f.eks grunnet pipeteringsfeil eller feil i total protein-målinger, ble intensitetene normalisert mot total proteinmengde (membran blot).
 
-I Tabell 1 vises de normaliserte intensitetsverdiene for fosforylert (p-p70) og total (t-p70) p70S6K for høyre og venstre bein hos hver testperson, basert på membran blottet. Fosforyleringsnivået er beregnet som forholdet mellom normalisert p-p70 og t-p70. Fosforyleringsnivået (p-p70/t-p70) varierte mellom prøvene, med høyest nivå i høyre bein hos testperson T (1.550) og lavest i venstre bein hos testperson LØ (0.920).
+I @tbl-WB vises de normaliserte intensitetsverdiene for fosforylert (p-p70) og total (t-p70) p70S6K for høyre og venstre bein hos hver testperson, basert på membran blottet. Fosforyleringsnivået er beregnet som forholdet mellom normalisert p-p70 og t-p70. Fosforyleringsnivået (p-p70/t-p70) varierte mellom prøvene, med høyest nivå i trent bein hos testperson T (1.550) og lavest i utrent bein hos testperson LØ (0.920).
 
-Testperson	Bein	Membran blot (p-p70)	Membran blot (t-p70)	p-p70 (raw)*	t-p70 (raw)*	p-p70 (norm.)	t-p70 (norm.)	Fosforyleringsnivå
-HE	Venstre	16530.472	15516.158	4276.447	4276.447	0.2587	0.2756	0.939
-HE	Høgre	10135.430	13009.673	4238.276	4238.276	0.4182	0.3257	1.284
-T	Venstre 	11187.966	12917.480	4457.276	4457.276	0.3985	0.3449	1.155
-T	Høgre	7012.388	10868.744	4148.447	4148.447	0.5916	0.3816	1.550
-LØ	Høgre	14791.037	13617.430	4249.861	4249.861	0.2872	0.3122	0.920
-
-Tabell 1: Oppsummering av absolutte verdier til de individuelle testpersonene. 
+```{r}
+#| warning: false
+#| message: false
+#| echo: false
+#| label: tbl-WB
+#| tbl-cap: "Intensitetsverdiene for p-p70S6K og t-p70S6K fra densiometer analysen i ImageJ."
 
 
+library(gt)
+
+# Opprett datasettet med originale kolonnenavn
+data <- data.frame(
+  Testperson = c("HE", "HE", "T", "T", "LØ"),
+  Bein = c("Venstre", "Høgre", "Venstre", "Høgre", "Høgre"),
+  "Membran blot (p-p70)" = c(16530.472, 10135.430, 11187.966, 7012.388, 14791.037),
+  "Membran blot (t-p70)" = c(15516.158, 13009.673, 12917.480, 10868.744, 13617.430),
+  "p-p70 (raw)" = c(4276.447, 4238.276, 4457.276, 4148.447, 4249.861),
+  "t-p70 (raw)" = c(4276.447, 4238.276, 4457.276, 4148.447, 4249.861),
+  "p-p70 (norm.)" = c(0.2587, 0.4182, 0.3985, 0.5916, 0.2872),
+  "t-p70 (norm.)" = c(0.2756, 0.3257, 0.3449, 0.3816, 0.3122),
+  Fosforyleringsnivå = c(0.939, 1.284, 1.155, 1.550, 0.920),
+  check.names = FALSE # Hindrer R fra å endre kolonnenavnene
+)
+
+gt_table <- data %>%
+  gt() %>%
+  tab_header(
+    title = "Western Blot analyse av fosforyleringsnivå"
+  ) %>%
+  cols_align(
+    align = "center",
+    columns = everything()
+  ) %>%
+  fmt_number(
+    columns = c("Membran blot (p-p70)", "Membran blot (t-p70)", "p-p70 (raw)", 
+                "t-p70 (raw)", "p-p70 (norm.)", "t-p70 (norm.)", "Fosforyleringsnivå"),
+    decimals = 2,
+    sep_mark = " " # Bruker mellomrom som tusenskiller
+  ) %>%
+  tab_source_note(
+    source_note = "Merk: Tallene er råverdier uten en spesifikk enhet."
+  ) %>%
+  tab_style(
+    style = list(
+      cell_fill(color = "lightblue")
+    ),
+    locations = cells_column_labels(columns = everything())
+  )
+
+# Vis tabellen
+gt_table
+```
 
 
+Den gjennomsnittlige aktiviteten til p70S6K i hele gruppen var 1.17 ± 0.25. Det trente beinet hadde et høyere fosforyleringsnivå (1.43 ± 0.15) enn det utrente beinet (0.99 ± 0.09). Disse funnene indikerer at mekanisk belastning fra treningen førte til økt aktivering av mTORC1-signalveien.
 
-Den gjennomsnittlige aktiviteten til p70S6K på tvers av gruppen var 1.168 ± 0.248, med et høyere nivå i høyre bein (1.426 ± 0.147) sammenlignet med venstre bein (0.986 ± 0.090). Variasjonen i fosforyleringsnivået var høyest på gruppenivå med en CV på 21.23%, og lavere når høyre (CV = 10.31%) og venstre bein ble analysert separat (CV = 9.13%).
+Total p70S6K (t-p70) viste en liten forskjell mellom de to gruppene. Gjennomsnittet for hele gruppen var 0.33 ± 0.04, mens det trente beinet hadde et noe høyere nivå (0.35 ± 0.04) enn det utrente beinet (0.31 ± 0.03).
 
-Parameter	Hele gruppen (n = 20)	Høyre bein (n = 10)	Venstre bein (n = 10)
-t-p70 (norm.)	
-
-Gj.sn: 0.3280
-SD: 0.0366
-CV = 11.16%
-
-	Gj.sn: 0.3537
-SD: 0.0396
-CV = 11.19%	Gj.sn: 0.3127
-SD: 0.0298
-CV = 9.53%
-p-p70 (norm.)	
-
-Gj.sn: 0.3908
-SD: 0.1174
-CV = 30.04%
-
-	Gj.sn: 0.5049
-SD: 0.1227
-CV = 24.30%	Gj.sn: 0.3148
-SD: 0.0704
-CV = 22.37%
-Fosforyleringsnivå	
-
-Gj.sn: 1.168
-SD: 0.248
-CV = 21.23%
-
-	Gj.sn: 1.426
-SD: 0.147
-CV = 10.31%	Gj.sn: 0.986
-SD: 0.090
-CV = 9.13%
-
-Tabell 2: Gjennomsnittlige nivåer av total og fosforylert p70S6K, samt forskjellen mellom disse, i høyre og venstre bein. Presenteres som gjennomsnitt (gj.snitt), standardavvik (SD) og coefficient of variation (CV) 
+For fosforylert p70S6K (p-p70) var forskjellene mer markante. Gjennomsnittet for hele gruppen var 0.39 ± 0.12, mens nivået i det trente beinet (0.50 ± 0.12) var betydelig høyere enn i det utrente beinet (0.31 ± 0.07). Disse resultatene understøtter observasjonen om at trening spesifikt øker fosforyleringen av p70S6K og aktiverer mTORC1-signalveien.
 
 
+```{r}
+#| warning: false
+#| message: false
+#| echo: false
+#| label: tbl-resultater
+#| tbl-cap: "Deskriptiv data fra densiometri analysen."
+
+library(gt)
+
+# Opprett datasettet med gj.sn ± SD format
+data_result <- data.frame(
+  Parameter = c("t-p70 (norm.)", "p-p70 (norm.)", "Fosforyleringsnivå"),
+  `Hele gruppen (n = 20)` = c(
+    "0.33 ± 0.04",
+    "0.39 ± 0.12",
+    "1.17 ± 0.25"
+  ),
+  `Høyre bein (n = 10)` = c(
+    "0.35 ± 0.04",
+    "0.50 ± 0.12",
+    "1.43 ± 0.15"
+  ),
+  `Venstre bein (n = 10)` = c(
+    "0.31 ± 0.03",
+    "0.31 ± 0.07",
+    "0.99 ± 0.09"
+  ),
+  check.names = FALSE
+)
+
+# Lag tabellen med `gt`
+gt_table <- data_result %>%
+  gt() %>%
+  tab_header(
+    title = "Tabell 2: Gjennomsnittlige nivåer av total og fosforylert p70S6K",
+    subtitle = "Nivåene er presentert som gjennomsnitt ± standardavvik (SD)"
+  ) %>%
+  cols_align(
+    align = "center",
+    columns = everything()
+  ) %>%
+  cols_label(
+    Parameter = "Parameter",
+    `Hele gruppen (n = 20)` = "Hele gruppen\n(n = 20)",
+    `Høyre bein (n = 10)` = "Høyre bein\n(n = 10)",
+    `Venstre bein (n = 10)` = "Venstre bein\n(n = 10)"
+  ) %>%
+  tab_style(
+    style = list(
+      cell_text(weight = "bold")
+    ),
+    locations = cells_column_labels(columns = everything())
+  )
+
+# Vis tabellen
+gt_table
+```
 
 
 ## Diskusjon
 
-Intensitetsverdiene gir oss et bilde av p70S6K-aktiviteten i prøvene, og selv om absolutt kvantifisering ikke ble utført, indikerer et høyere fosforyleringsnivå en økt aktivitet av mTOR-signalveien, som spiller en viktig rolle for proteinsyntesen. Det høyere fosforyleringsnivået i høyre bein (1.4261) sammenlignet med venstre (0.986) kan forklares ved at kun det ene beinet ble trent før biopsien. Dette viser til den akutte aktiveringen av mTOR-signalveien som respons av styrketrening, der den største aktiveringen ser ut til å forekomme kort tid etter trening, med en gradvis reduksjon over tid. Et høyere fosforyleringsnivå reflekterer potensielt et større kapasitet for proteinsyntese i det trente beinet. Nivå over 1.0 i flere prøver kan tyde på høy aktivering av p70S6K, men kan også være et resultat av tekniske faktorer.
+Intensitetsverdiene gir oss et bilde av p70S6K-aktiviteten i prøvene. Selv om absolutt kvantifisering ikke ble utført, indikerer et høyere fosforyleringsnivå en økt aktivitet av mTORC1-signalveien, som spiller en sentral rolle for proteinsyntese [@Atherton2012]. Resultatene viser et høyere fosforyleringsnivå av p70S6K i det trente beinet sammenlignet med det utrente, noe som understreker treningens evne til å stimulere molekylære mekanismer som fremmer muskulær tilpasning. Aktiveringen ser ut til å være tidsavhengig, med høyest nivå kort tid etter trening og en gradvis reduksjon over tid, i tråd med tidligere forskning [@Atherton2012; @DSouza2014].
 
-Høyere variasjon i fosforylert p70S6K (CV = 30.04 %) sammenlignet med total p70S6K (CV = 11.16 %) kan skyldes biologisk variasjon i mTOR-signalveien mellom testpersoner. Samtidig kan tekniske faktorer som variasjoner i prøvehåndtering ha bidratt til dette. Lavere CV i høyre (10.31%) og venstre bein (9.13%) indikerer mer konsistens når prøvene analyseres separat. 
+Variasjonen i fosforyleringsnivåene kan tilskrives både biologiske og tekniske faktorer. Forskjellene mellom høyre og venstre bein var mer konsistente enn variasjonen på gruppenivå, noe som tyder på en spesifikk effekt av trening. En viktig begrensning er mangelen på en kalibreringskurve, som gjør det vanskelig å kvantifisere proteinmengden absolutt. Dette begrenser muligheten til å sammenligne resultatene direkte med tidligere studier, men demonstrerer samtidig hvordan Western blot kan brukes for å undersøke slike mekanismer.
+
+Ved å belyse aktiveringen av mTORC1-signalveien, kan man få en dypere forståelse av molekylære tilpasninger til trening.
+
 
 ## Konklusjon
 
-Den asymmetriske aktiveringen av mTOR-signalveien mellom høyre og venstre bein kan forklares ved at kun det ene beinet ble trent før biopsien. Resultatene viser hvordan styrketrening kan gi en akutt økning i fosforyleringsnivået av p70S6K, med størst aktivering observert kort tid etter trening. Resultatene burde likevel tolkes med omhu, da tekniske faktorer som bakgrunnsstøy på blottet, feil pipettering, ujevn proteinoverføring, manglende kalibrerintgskurve kan ha påvirket intensitetsmålingene.
+Resultatene indikerer en asymmetrisk aktivering av mTORC1-signalveien mellom høyre og venstre bein, noe som kan forklares ved at kun det ene beinet ble trent før biopsien. Styrketrening førte til en akutt økning i fosforyleringsnivået av p70S6K, med størst aktivering observert kort tid etter trening. Dette understreker treningens evne til å stimulere molekylære mekanismer som fremmer proteinsyntese og muskulær tilpasning.
+
+Selv om resultatene gir innsikt i p70S6K-aktiveringen etter trening, må de tolkes med forsiktighet på grunn av metodiske begrensninger som bakgrunnsstøy på blottet, pipetteringsfeil, ujevn proteinoverføring og mangelen på en kalibreringskurve. 
+
+
+## Oppløsninger
+
+```{r}
+#| warning: false
+#| message: false
+#| echo: false
+#| label: tbl-buffer
+#| tbl-cap: "Bufferoppløsninger"
+
+
+library(gt)
+
+# Opprett datasettet
+buffer_data <- data.frame(
+  `Buffer Solution` = c("TBS 1L 10x, pH 7.6 (HCI adjust)", 
+                        "Running buffer 1L 10x, pH 8.3", 
+                        "Transfer buffer 1L 10x"),
+  `Komponent` = c(
+    "Tris Base\nNaCI",
+    "Tris Base\nGlycin\nSDS",
+    "Tris Base\nGlycin"
+  ),
+  `Konsentrasjon (mM)` = c(
+    "200 mM\n1.37 M",
+    "250 mM\n1.92 M\n35 mM",
+    "250 mM\n1.92 M"
+  ),
+  `Masse (g)` = c(
+    "24.22 g\n80.06 g",
+    "30.28 g\n144.1 g\n10.09 g",
+    "30.28 g\n144.1 g"
+  ),
+  check.names = FALSE
+)
+
+# Lag tabellen med `gt`
+buffer_table <- buffer_data %>%
+  gt() %>%
+  tab_header(
+    title = "Oversikt over oppløsninger",
+    subtitle = "Tabellen viser bufferløsninger med komponenter, konsentrasjoner og masser."
+  ) %>%
+  cols_align(
+    align = "center",
+    columns = everything()
+  ) %>%
+  cols_label(
+    `Buffer Solution` = "Bufferoppløsning",
+    `Komponent` = "Komponent",
+    `Konsentrasjon (mM)` = "Konsentrasjon (mM)",
+    `Masse (g)` = "Masse (g)"
+  ) %>%
+  tab_style(
+    style = cell_text(weight = "bold"),
+    locations = cells_column_labels(columns = everything())
+  ) %>%
+  tab_source_note(
+    source_note = "1 x Transfer buffer = 100 ml TB stock x 10 + 100 ml methanol + 800 ml dH2O"
+  )
+
+# Vis tabellen
+buffer_table
+
+```
+
+## Koder brukt
+
+```{r, echo=TRUE, eval=FALSE, label='tbl-buffer-vedlegg'}
+
+library(gt)
+
+# Opprett datasettet
+buffer_data <- data.frame(
+  `Buffer Solution` = c("TBS 1L 10x, pH 7.6 (HCI adjust)", 
+                        "Running buffer 1L 10x, pH 8.3", 
+                        "Transfer buffer 1L 10x"),
+  `Komponent` = c(
+    "Tris Base\nNaCI",
+    "Tris Base\nGlycin\nSDS",
+    "Tris Base\nGlycin"
+  ),
+  `Konsentrasjon (mM)` = c(
+    "200 mM\n1.37 M",
+    "250 mM\n1.92 M\n35 mM",
+    "250 mM\n1.92 M"
+  ),
+  `Masse (g)` = c(
+    "24.22 g\n80.06 g",
+    "30.28 g\n144.1 g\n10.09 g",
+    "30.28 g\n144.1 g"
+  ),
+  check.names = FALSE
+)
+
+# Lag tabellen med `gt`
+buffer_table <- buffer_data %>%
+  gt() %>%
+  tab_header(
+    title = "Oversikt over oppløsninger",
+    subtitle = "Tabellen viser bufferløsninger med komponenter, konsentrasjoner og masser."
+  )
+```
