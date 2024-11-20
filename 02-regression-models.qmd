@@ -31,7 +31,7 @@ Det finnes mange ulike metoder for å bestemme LT, og en av de mest brukte er å
 
 For å evaluere påliteligheten av disse målmetodene, er det viktig å vurdere testens reliabilitet. Dette kan kvantifiseres gjennom variasjon innen samme person, også kjent som "typical error", på norsk typisk feil (@RN130, s.2). Typisk feil forteller noe om den forventede variasjonen mellom målinger på samme individ og kan uttrykkes som en prosentandel av gjennomsnittsverdien, kjent som koeffisienten av variasjon (CV) (@RN130, 3). CV er dimmensjonsløs og åpner opp for muligheten å sammenligne reliabiliteten mellom personer med ulik prestasjonsevne, og er derfor et relevant mål i denne rapporten. 
 
-Laktatterskelen er en viktig fysiologisk parameter for å forstå sammenhengen mellom treningsintensitet og metabolsk respons. Selv om det finnes flere metoder for å beregne laktatterskel, er det vanlig å bruke faste blodlaktatnivåer som referansepunkter, som 2 mmol/L og 4 mmol/L, for å forutsi treningsintensitet [@tanner2012, kap. 6]. Formålet med denne deloppgave er å sammenligne reliabiliteten til disse tersklene, målt som typisk feil i prosent av gjennomsnittet.
+Laktatterskelen er en viktig fysiologisk parameter for å forstå sammenhengen mellom treningsintensitet og metabolsk respons. Selv om det finnes flere metoder for å beregne laktatterskel, er det vanlig å bruke faste blodlaktatnivåer som referansepunkter, som 2 mmol/L og 4 mmol/L, for å forutsi treningsintensitet [@RN1956, kap. 6]. Formålet med denne deloppgave er å sammenligne reliabiliteten til disse tersklene, målt som typisk feil i prosent av gjennomsnittet.
 
 På grunn av begrenset datainnsamling fra vårt reliabilitetsforsøk, benyttes datasettet fra `cyclingstudy` som grunnlag for analysen. Dette gir mulighet til å beregne og evaluere reliabiliteten av de to tersklene og utforske deres egnethet i praksis.
 
@@ -453,6 +453,11 @@ ggplot(data = data.frame(x = c(36, 59.5, 86.5,
 
 
 ```{r}
+#| warning: false
+#| message: false
+#| echo: false
+
+
 # Fit the model
 cal <- lm(log(mw) ~ dist, data = ladder)
 
@@ -522,24 +527,23 @@ Ved å undersøke sammenhengen mellom antall myonuclei i type II muskelfibre og 
 
 **Spørsmålet**: Finnes det en lineær sammenheng mellom antall myonuclei per type-II muskelfiber og treningsalder? 
 
-```{r}
-# Laster inn nødvendige biblioteker
-library(exscidata)
-library(tidyverse)
-library(gt)
-library(broom)
-```
-
 ### Metode
 
-For å undersøke sammenhengen mellom antall myonuclei per type-II muskelfiber og treningsalder, brukte såg man på variablene `FAST_NUCLEI_T1` og `TRAINING_AGE` i datasettet `hypertrofi` fra `exscidata`-pakken. Lineær regresjon ble benyttet, da denne er velegnet for å evaluere en potensiell lineær relasjon mellom en avhengig variabel (`FAST_NUCLEI_T1`) og en uavhengig variabel (`TRAINING_AGE`) [@spieg2019, s.128-129]. 
+For å undersøke sammenhengen mellom antall myonuclei per type-II muskelfiber og treningsalder, brukte såg man på variablene `FAST_NUCLEI_T1` og `TRAINING_AGE` i datasettet `hypertrofi` fra `exscidata`-pakken. Lineær regresjon ble benyttet, da denne er velegnet for å evaluere en potensiell lineær relasjon mellom en avhengig variabel (`FAST_NUCLEI_T1`) og en uavhengig variabel (`TRAINING_AGE`) [@RN2902, s.128-129]. 
 
-Datasettet ble først filtrert for å ekskludere observasjoner med manglende verdier, og vi valgte kun de relevante variablene for analysen. Dataene ble deretter visualisert med scatterplott og en tilhørende regresjonslinje generert av `geom_smooth`, se @fig-plot-training-age-myonuclei. Regresjonslinjen gir en indikasjon på hvordan variablene relaterer seg til hverandre, mens det gråe konfidensintervallet rundt linjen reflekterer usikkerheten i modellen. Et bredt konfidensintervall, som sett her, indikerer større usikkerhet i forholdet mellom variablene [@spieg2019 s.240-244]. 
+Datasettet ble først filtrert for å ekskludere observasjoner med manglende verdier, og vi valgte kun de relevante variablene for analysen. Dataene ble deretter visualisert med scatterplott og en tilhørende regresjonslinje generert av `geom_smooth`, se @fig-plot-training-age-myonuclei. Regresjonslinjen gir en indikasjon på hvordan variablene relaterer seg til hverandre, mens det gråe konfidensintervallet rundt linjen reflekterer usikkerheten i modellen. Et bredt konfidensintervall, som sett her, indikerer større usikkerhet i forholdet mellom variablene [@RN2902 s.240-244]. 
 
 
 ```{r}
 #| label: fig-plot-training-age-myonuclei
 #| fig-cap: "Sammenheng mellom treningalder og myonuclei per fiber CSA i Type-II"
+
+
+# Laster inn nødvendige biblioteker
+library(exscidata)
+library(tidyverse)
+library(gt)
+library(broom)
 
 # Laster inn data
 data("hypertrophy")
@@ -613,14 +617,14 @@ regression_table
 
 ### Diskusjon
 
-I tabellen kan vi lese av verdiene for estimert koeffisient (regresjonskoeffisient), standardfeil, t-verdi og p-verdi. Den estimerte koeffisenten til "Treningserfaring (år)" indikerer at `FAST_NUCLEI_T1` reduseres med 0.008 per år med treningserfaring. Denne negative endringen er imidletid svak, og standardfeilen er relativt stor i forhold til koeffisienten, noe som tyder på at estimatet er usikkert [@spieg2019 s.230-232] 
+I tabellen kan vi lese av verdiene for estimert koeffisient (regresjonskoeffisient), standardfeil, t-verdi og p-verdi. Den estimerte koeffisenten til "Treningserfaring (år)" indikerer at `FAST_NUCLEI_T1` reduseres med 0.008 per år med treningserfaring. Denne negative endringen er imidletid svak, og standardfeilen er relativt stor i forhold til koeffisienten, noe som tyder på at estimatet er usikkert [@RN2902 s.230-232] 
 
-Standardfeilen gir en indikasjon på hvor mye koeffisienten kan forventes å mellom ulike utvalg [@spieg2019 s.230-232]. Selv om standardfeilen numerisk er lav, er dens forhold til koeffisienten avgjørende for tolkningen. I dette tilfellet bør man være forsiktig med å trekke konklusjoner om nøyaktigheten til estimatet.
+Standardfeilen gir en indikasjon på hvor mye koeffisienten kan forventes å mellom ulike utvalg [@RN2902 s.230-232]. Selv om standardfeilen numerisk er lav, er dens forhold til koeffisienten avgjørende for tolkningen. I dette tilfellet bør man være forsiktig med å trekke konklusjoner om nøyaktigheten til estimatet.
 
-*t-verdien* sier hvor mange standardavvik den estimerte koeffisienten er fra null. En større t-verdi, enten negativ eller positiv, tyder på at man med større sikkerhet kan si at koeffisienten er signifikant [@spieg2019 s.275-276]. Med en t-verdi på -0.104, i vårt tilfelle, kan man ikke med sikkerhet si at det er en signifikant lineær sammenheng mellom `FAST_NUCLEI_T1` og `TRAINING_AGE`. 
+*t-verdien* sier hvor mange standardavvik den estimerte koeffisienten er fra null. En større t-verdi, enten negativ eller positiv, tyder på at man med større sikkerhet kan si at koeffisienten er signifikant [@RN2902 s.275-276]. Med en t-verdi på -0.104, i vårt tilfelle, kan man ikke med sikkerhet si at det er en signifikant lineær sammenheng mellom `FAST_NUCLEI_T1` og `TRAINING_AGE`. 
 
-*p-verdien* er nært knyttet til t-verdien, og hjelper oss å vurdere om t-verdien er statistisk signifikant. P-verdien representerer sannsynligheten for å observere en teststatistikk som er like ekstrem ,eller like ekstrem, som den t-verdien vi har fått, gitt antagelsen at det ikke er en sammenheng mellom variablene våre [@spieg2019 s.264-265]. I vår modell er p-verdien 0.918, noe som tilsier at det er 91,8 % sannsynlighet at man vil observere en t-verdi på -0.008, gitt nullhypotesen. Dermed kan man ikke konkludere med at den uavhengige variabelen TRAINING_AGE har en effekt på den avhengige variabelen FAST_NUCLEI_T1 eller at det finnes en signifikant lineær sammenheng mellom disse variablene [@spieg2019, s.265-268].
+*p-verdien* er nært knyttet til t-verdien, og hjelper oss å vurdere om t-verdien er statistisk signifikant. P-verdien representerer sannsynligheten for å observere en teststatistikk som er like ekstrem ,eller like ekstrem, som den t-verdien vi har fått, gitt antagelsen at det ikke er en sammenheng mellom variablene våre [@RN2902 s.264-265]. I vår modell er p-verdien 0.918, noe som tilsier at det er 91,8 % sannsynlighet at man vil observere en t-verdi på -0.008, gitt nullhypotesen. Dermed kan man ikke konkludere med at den uavhengige variabelen TRAINING_AGE har en effekt på den avhengige variabelen FAST_NUCLEI_T1 eller at det finnes en signifikant lineær sammenheng mellom disse variablene [@RN2902, s.265-268].
 
-Det er viktig å understreke at p-verdien kun sier noe om den statistiske signifikansen av resultatene, og ikke om størrelsen på effekten eller dens praktiske relevans [@spieg2019 s.285]. I små datasett, som i vårt tilfelle, kan p-verdien være høy selv om det er en reel effekt, fordi små utvalg har lavere statistisk styrke til å påvise sammenhenger [@spieg2019 s.285].
+Det er viktig å understreke at p-verdien kun sier noe om den statistiske signifikansen av resultatene, og ikke om størrelsen på effekten eller dens praktiske relevans [@RN2902 s.285]. I små datasett, som i vårt tilfelle, kan p-verdien være høy selv om det er en reel effekt, fordi små utvalg har lavere statistisk styrke til å påvise sammenhenger [@RN2902 s.285].
 
 Denne analysen har undersøkt sammenhengen mellom treningserfaring og antall myonuclei per type II-muskelfiber, men resultatene viser ingen signifikant lineær sammenheng mellom variablene. Selv om p-verdien indikerer manglende statistisk signifikans, er det viktig å merke seg begrensningene ved små datasett og mulig usikkerhet knyttet til estimatene. 
