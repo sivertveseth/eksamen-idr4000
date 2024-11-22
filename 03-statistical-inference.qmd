@@ -134,7 +134,7 @@ Den lave utvalgsstørrelsen i `m1` vil også føre til at tilfeldige variasjoner
 
 De skyggelagte områdene hjelper å visualisere hvor sannsynlig eller usannsynlig den observerte t-verdien, gitt at nullhypotesen er sann (dvs. at $\mu$ = 1.5). Ved å skyggelegge begge halene visualiseres man sannsynligheten for å få en t-verdi enten på den positive eller negative siden. Dess mindre det skyggelagte området er, desto mindre er det at vi vil observere en så ekstrem t-verdi, og desto mer sannsynlig er det at vi kan forkaste nullhypotesen.
 
-## Simulering til spørsmål 4-7
+## Simulering til spørsmål 4-8
 
 Med hjelp av R har det blitt laget et datasett med resultat fra 1000 utførte studier, for å kunne utvikle en faktisk utvalgsdistribusjon. Ved å bruke `results` datasettet, skal eg svare på spørsmålene 4-7.
 
@@ -351,7 +351,7 @@ Videre har eg laget et histogram, @fig-histo0, for å visualisere andelen av p-v
 
 ```{r}
 #| label: fig-histo0
-#| fig-cap: "Histogram of P-values for Population with Mean Effect of Zero"
+#| fig-cap: "Histogram av p-verdier med gjennomsnittlig effekt på 0"
 
 library(ggplot2)
 
@@ -360,9 +360,9 @@ results_null %>%
   ggplot(aes(pval)) + 
   geom_histogram(binwidth = 0.05, fill = "blue", color = "white") + 
   facet_wrap(~ n, scales = "free_y") +
-  labs(title = "Histogram of P-values for Population with Mean Effect of Zero",
-       x = "P-values",
-       y = "Frequency") +
+  labs(title = "Histogram av p-verdier med gjennomsnittlig effekt på 0",
+       x = "P-verdier",
+       y = "Frekvenser") +
   theme_minimal()
 ```
 
