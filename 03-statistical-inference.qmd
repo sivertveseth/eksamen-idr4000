@@ -222,15 +222,15 @@ Standardfeilen kan på mange måter ses på som et mål for presisjonen på esti
 
 ```{r}
 #| label: fig-histo
-#| fig-cap: "Histogram of p-values for Sample Sizes 8 and 40"
+#| fig-cap: "Histogram av p-verdier."
 
 results %>%
   ggplot(aes(pval)) + 
   geom_histogram(binwidth = 0.05, fill = "lightblue", color = "white") +  # Juster binwidth hvis nødvendig
   facet_wrap(~ n) +  # Lager ett histogram for n = 8 og ett for n = 40
-  labs(title = "Histogram of p-values for Sample Sizes 8 and 40",
-       x = "P-values",
-       y = "Frequency") +
+  labs(title = "Histogram av p-verdier av utvalgsstørrelse n = 8 og n = 40",
+       x = "P-verdier",
+       y = "Frekvens") +
   theme_minimal()
 ```
 
@@ -248,7 +248,7 @@ For at studiene fra hvert utvalg skal bli med i summeringen, må de ha eit signi
 
 ```{r}
 #| label: tbl-sig
-#| tbl-cap: "Proportion of Significant Results by Sample Size"
+#| tbl-cap: "Proposisjoner av signifikante resultater utifra utvalgsstørrelse"
 #| 
 library(kableExtra)
 library(dplyr)
@@ -272,7 +272,7 @@ I @tbl-pwr er det vist den statistiske poweren for de ulike utvalgsstørrelsene.
 
 ```{r}
 #| label: tbl-pwr
-#| tbl-cap: "Statistical Power for Different Sample Sizes"
+#| tbl-cap: "Statistisk power ved de ulike utvalgsstørrelsene"
 
 # Laster inn pwr og knitr pakken
 library(pwr)
