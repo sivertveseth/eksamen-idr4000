@@ -202,8 +202,8 @@ gt_table <- data_result %>%
   cols_label(
     Parameter = "Parameter",
     `Hele gruppen (n = 20)` = "Hele gruppen\n(n = 20)",
-    `Høyre bein (n = 10)` = "Høyre bein\n(n = 10)",
-    `Venstre bein (n = 10)` = "Venstre bein\n(n = 10)"
+    `Høyre bein (n = 10)` = "Trent bein\n(n = 10)",
+    `Venstre bein (n = 10)` = "Utrent bein\n(n = 10)"
   ) %>%
   tab_style(
     style = list(
