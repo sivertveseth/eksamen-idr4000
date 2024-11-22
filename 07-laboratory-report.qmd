@@ -1,19 +1,4 @@
----
-title: "Laboratory Report"
-author: "Sivert Helland Veseth"
-format: 
-  html:
-    number-sections: true
-    toc: true
-    code-fold: true
-execute: 
-  warning: false
-crossref:
-  fig-title: "Figur"
-  tbl-title: "Tabell"
----
-
-## Introduksjon og bakgrunn
+# Protein ekstraksjon og analyse
 
 I jakten på å oppnå en dypere forståelse av de molekylære reaksjonene som regulerer transkripsjon og translasjon med trening, ernæring, sykdom og aldring, har bruken av Western blot (WB) i treningsfysiologi økt. WB er en sentral metode for å undersøke regulatoriske molekylære reaksjoner, blant annet ved å kvantifisere proteinmengder og analysere protein-protein-interaksjoner. Dette er avgjørende for å kunne dokumentere fysiologiske adaptasjoner som oppstår som respons til trening [@Bass2017]. 
 
@@ -22,7 +7,6 @@ Western blot har tradisjonelt vært assosiert med overføring av proteiner fra e
 p70S6K er en nøkkelkomponent i mTORC1-signalveien, som spiller en sentral rolle i reguleringen av proteinsyntese og muskelvekst [@DSouza2014, s.7]. Singalveien aktiveres som respons på mekanisk belastning, og er avgjørende for muskulære tilpasninger til trening [@Atherton2012]. Fosforlyering av p70S6K er en indikator på aktivering av mTORC1, som igjen reflekterer cellulære prosesser som fremmer anabole responser i muskulaturen [@DSouza2014; @Holz2005, s.577-579]. Ved å måle både totalmengden av p70S6K og den fosforylerte formen kan man få innsikt i balansen mellom inaktive og aktive proteiner, noe som gir et mer helhetlig bilde av signalveiens funksjon [@Bass2017]. Derfor er p70S6K et ideelt mål for å studere molekylære tilpasninger til trening. 
 
 Formålet med dette eksperimentet er å bruke og demonstrere Western Blot som en metode for å analysere proteinuttrykk. Dette gjøres ved å sammenligne totalmengden av p70S6K (t-p70) og mengden fosforylert p70S6K i muskelvev fra et ben som har gjennomført en styrketreningsøkt, med et ben som ikke har trent, over tid etter treningen. Ved å sammenligne det trenede og utrenede ønsker man å evaluere hvordan trening påvirker aktiveringen av mTORC1-signalveien, og samtidig demonstrere hvordan WB kan brukes til å undersøke slike molekylær mekanismer.
-
 
 
 ## Metode
@@ -92,8 +76,6 @@ Membranen ble blokkert i en 5 % melkebuffer (TBS-T) i 1 time ved romtemperatur f
 
 For å få frem signalene ble det benyttet ECL (Enhanced Chemiluminesscence) og bildeopptak på en Gel Doc-enhet [@Bass2017, s.18-19]. Kvantifisering av Western blot-resulatetene ble utført ved hjelp av densiometrisk analyse i programmet ImageJ. Den høyeste intensiteten av proteinbåndene for p-p70S6K og t-p70S6K ble målt og normalisert mot total proteinmengde for å korrigere for variasjoner i prøvene [@Bass2017, s.20-24]. Forholdet mellom p-p70S6K og t-p70S6K ble beregnet som en indikator på aktiveringen av mTORC1-signalveien. 
 
-De ulike løsningene som er blitt brukt, er listet opp nederst i oppgåven etter konklusjon.  
-
 
 ## Resultater
 
@@ -101,7 +83,7 @@ Vi benyttet oss av WB-analyse for å kvantifisere total p70S6K og fosforlyert p7
 
 I @tbl-WB vises de normaliserte intensitetsverdiene for fosforylert (p-p70) og total (t-p70) p70S6K for høyre og venstre bein hos hver testperson, basert på membran blottet. Fosforyleringsnivået er beregnet som forholdet mellom normalisert p-p70 og t-p70. Fosforyleringsnivået (p-p70/t-p70) varierte mellom prøvene, med høyest nivå i trent bein hos testperson T (1.550) og lavest i utrent bein hos testperson LØ (0.920).
 
-```{r}
+```{r, out.width="\\textwidth"}
 #| warning: false
 #| message: false
 #| echo: false
@@ -109,6 +91,8 @@ I @tbl-WB vises de normaliserte intensitetsverdiene for fosforylert (p-p70) og t
 #| tbl-cap: "Intensitetsverdiene for p-p70S6K og t-p70S6K fra densiometer analysen i ImageJ."
 
 
+library(dplyr)
+library(tidyr)
 library(gt)
 
 # Opprett datasettet med originale kolonnenavn
@@ -125,7 +109,20 @@ data <- data.frame(
   check.names = FALSE # Hindrer R fra å endre kolonnenavnene
 )
 
-gt_table <- data %>%
+# Bytt kolonner og rader
+data_long <- data %>%
+  pivot_longer(
+    cols = -c(Testperson, Bein),
+    names_to = "Variabel",
+    values_to = "Verdi"
+  ) %>%
+  pivot_wider(
+    names_from = c(Testperson, Bein),
+    values_from = Verdi
+  )
+
+# Lag ny gt-tabell med de transformerte dataene
+gt_table <- data_long %>%
   gt() %>%
   tab_header(
     title = "Western Blot analyse av fosforyleringsnivå"
@@ -135,8 +132,7 @@ gt_table <- data %>%
     columns = everything()
   ) %>%
   fmt_number(
-    columns = c("Membran blot (p-p70)", "Membran blot (t-p70)", "p-p70 (raw)", 
-                "t-p70 (raw)", "p-p70 (norm.)", "t-p70 (norm.)", "Fosforyleringsnivå"),
+    columns = everything(),
     decimals = 2,
     sep_mark = " " # Bruker mellomrom som tusenskiller
   ) %>%
@@ -162,7 +158,7 @@ Total p70S6K (t-p70) viste en liten forskjell mellom de to gruppene. Gjennomsnit
 For fosforylert p70S6K (p-p70) var forskjellene mer markante. Gjennomsnittet for hele gruppen var 0.39 ± 0.12, mens nivået i det trente beinet (0.50 ± 0.12) var betydelig høyere enn i det utrente beinet (0.31 ± 0.07). Disse resultatene understøtter observasjonen om at trening spesifikt øker fosforyleringen av p70S6K og aktiverer mTORC1-signalveien.
 
 
-```{r}
+```{r, out.width="\\textwidth"}
 #| warning: false
 #| message: false
 #| echo: false
@@ -237,9 +233,11 @@ Resultatene indikerer en asymmetrisk aktivering av mTORC1-signalveien mellom hø
 Selv om resultatene gir innsikt i p70S6K-aktiveringen etter trening, må de tolkes med forsiktighet på grunn av metodiske begrensninger som bakgrunnsstøy på blottet, pipetteringsfeil, ujevn proteinoverføring og mangelen på en kalibreringskurve. 
 
 
+
+
 ## Oppløsninger
 
-```{r}
+```{r, out.width="\\textwidth"}
 #| warning: false
 #| message: false
 #| echo: false
@@ -295,7 +293,8 @@ buffer_table <- buffer_data %>%
   ) %>%
   tab_source_note(
     source_note = "1 x Transfer buffer = 100 ml TB stock x 10 + 100 ml methanol + 800 ml dH2O"
-  )
+  ) %>%
+  as_latex()
 
 # Vis tabellen
 buffer_table
@@ -304,9 +303,60 @@ buffer_table
 
 ## Koder brukt
 
-```{r, echo=TRUE, eval=FALSE, label='tbl-buffer-vedlegg'}
+```{r, echo=TRUE, results='hide'}
 
+library(dplyr)
+library(tidyr)
 library(gt)
+
+# Opprett datasettet med originale kolonnenavn
+data <- data.frame(
+  Testperson = c("HE", "HE", "T", "T", "LØ"),
+  Bein = c("Venstre", "Høgre", "Venstre", "Høgre", "Høgre"),
+  "Membran blot (p-p70)" = c(16530.472, 10135.430, 11187.966, 7012.388, 14791.037),
+  "Membran blot (t-p70)" = c(15516.158, 13009.673, 12917.480, 10868.744, 13617.430),
+  "p-p70 (raw)" = c(4276.447, 4238.276, 4457.276, 4148.447, 4249.861),
+  "t-p70 (raw)" = c(4276.447, 4238.276, 4457.276, 4148.447, 4249.861),
+  "p-p70 (norm.)" = c(0.2587, 0.4182, 0.3985, 0.5916, 0.2872),
+  "t-p70 (norm.)" = c(0.2756, 0.3257, 0.3449, 0.3816, 0.3122),
+  Fosforyleringsnivå = c(0.939, 1.284, 1.155, 1.550, 0.920),
+  check.names = FALSE # Hindrer R fra å endre kolonnenavnene
+)
+
+# Bytt kolonner og rader
+data_long <- data %>%
+  pivot_longer(
+    cols = -c(Testperson, Bein),
+    names_to = "Variabel",
+    values_to = "Verdi"
+  ) %>%
+  pivot_wider(
+    names_from = c(Testperson, Bein),
+    values_from = Verdi
+  )
+
+
+# Opprett datasettet med gj.sn ± SD format
+data_result <- data.frame(
+  Parameter = c("t-p70 (norm.)", "p-p70 (norm.)", "Fosforyleringsnivå"),
+  `Hele gruppen (n = 20)` = c(
+    "0.33 ± 0.04",
+    "0.39 ± 0.12",
+    "1.17 ± 0.25"
+  ),
+  `Høyre bein (n = 10)` = c(
+    "0.35 ± 0.04",
+    "0.50 ± 0.12",
+    "1.43 ± 0.15"
+  ),
+  `Venstre bein (n = 10)` = c(
+    "0.31 ± 0.03",
+    "0.31 ± 0.07",
+    "0.99 ± 0.09"
+  ),
+  check.names = FALSE
+)
+
 
 # Opprett datasettet
 buffer_data <- data.frame(

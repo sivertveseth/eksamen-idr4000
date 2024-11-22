@@ -1,13 +1,13 @@
-# Introduksjon {.unnumbered}
+# Innhold
 
-Ny rad
+Mappen består av flere oppgaver som dekker sentrale temaer i kurset. Oppgavene er utviklet gjennom semesteret med tilbakemeldinger fra medstudenter og lærere, og de er videre bearbeidet og forbedret for inkludering i denne mappen. Mappeeksamen er strukturert som en Quarto-bok, der hver oppgave utgjør et eget kapittel. Dette gir en helhetlig presentasjon av arbeidet som er gjennomført.
 
-Mappeeksamen består av følgende deler: 
-
-- Rapport: "Deskriptiv statistikk, reliabilitet og validitet og verktøy for reproduserbar vitenskap".
-- Laborasjonsrapport fra molekylærlabb
-- Arbeidskrav i vitenskapsteori
+- Rapport: "Reliabilitet og verktøy for reproduserbar vitenskap"
+- Rapport: "Regresjonsmodeller, predikasjon og tolkning"
 - Rapport: "Statistisk inferens, statistiske modeller og statistisk styrke"
 - Rapport: "Studiedesign"
 - Rapport: "Analyse av eksperimenter med repeterte målinger"
+- Arbeidskrav i vitenskapsteori
+- Laborasjonsrapport fra molekylærlab: "Protein ekstraksjon og analyse"
 
+Gjennom disse oppgavene demonstreres forståelse og anvendelse av metodiske og teoretiske konsepter som er sentrale i kurset, med fokus på både praktiske ferdigheter og kritisk refleksjon. De mest sentrale kodene er lagt ved til slutten av hvert del kapittel. Kodene, tabeller og referanselist er ekskludert fra ordtellingen. 

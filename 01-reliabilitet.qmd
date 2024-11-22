@@ -1,35 +1,18 @@
----
-title: "Assignment 1: Reliability and tools for reproducible data science"
-author: "Sivert Helland Veseth"
-format: 
-  html:
-    number-sections: true
-    toc: true
-    code-fold: true
-    mathjax: true
-execute: 
-  warning: false
-crossref:
-  fig-title: "Figur"
-  tbl-title: "Tabell"
----
+# Reliabilitet og verktøy for reproduserbar vitenskap
 
-## Introduksjon
+I 2005 satte John Ioannidis forskningsverden på prøve med utsagnet om at de fleste publiserte forskningsfunn er feilaktig [@RN1953]. Han fremhevet mangel på reliabilitet som en sentral utfordring, der forskeres fleksibilitet i studiedesign og analyser bidrar til resulateter som ikke kan reproduseres. Reliabilitet referer her til muligheten for å gjenskape studier og oppnå lignende resultater [@RN2902, s.342-348]. 
 
-I 2005 satte John Ioannidis forskningsverden på prøve med utsagnet om at de fleste publiserte forskningsfunn er feilaktig (@RN1953). Han fremhevet mangel på reliabilitet som en sentral utfordring, der forskeres fleksibilitet i studiedesign og analyser bidrar til resulateter som ikke kan reproduseres. Reliabilitet referer her til muligheten for å gjenskape studier og oppnå lignende resultater (@RN2902, s.342-348). 
+Reliabilitet av en test kan kvantifiseres på flere måter, blant annet som variasjonen innen samme person, endring i gjennomsnitt og retest-korrelasjon (korrelasjonen mellom målinger ved gjentatte tester) [@RN130, s.2]. Endring i gjennomsnitt viser hvordan tilfeldige eller systematiske faktorer, som læringseffekter, påvirker forskjellen mellom to tester. Retest-korrelasjon vurderer hvor godt en test reproduserer rangeringen av deltakere ved gjentatte forsøk. [@RN130, s.2]. 
 
-Reliabilitet av en test kan kvantifiseres på flere måter, blant annet som variasjonen innen samme person, endring i gjennomsnitt og retest-korrelasjon (korrelasjonen mellom målinger ved gjentatte tester) (@RN130, s.2). Endring i gjennomsnitt viser hvordan tilfeldige eller systematiske faktorer, som læringseffekter, påvirker forskjellen mellom to tester. Retest-korrelasjon vurderer hvor godt en test reproduserer rangeringen av deltakere ved gjentatte forsøk. (@RN130, s.2). 
+Den tredje måten, variasjon innen samme person, er særlig viktig for å forstå reliabiliteten til målinger. Denne variasjonen fanger opp tilfeldige forskjeller mellom målinger på samme individ og kvantifiseres som standardavviket til de individuelle verdiene, også kjent som "typical error" eller "standard error of measurement" [@RN130, s.2]. "Typical error", på norsk typisk feil, kan dermed forstås som variasjonen man vil forvente å observere fra forsøk x til forsøk y ved repeterte forsøk hos samme testdeltakere. En nyttig måte å presentere typisk feil på, er å uttrykke det som prosentdel av gjennomsnittsverdien [@RN130, s.2]. Dette åpner opp for sammenligning av en heterogen gruppe der prestasjonsnivået er ulikt, da den absolutte verdien av typisk feil vil gjerne øke sammen med måleverdien.  
 
-Den tredje måten, variasjon innen samme person, er særlig viktig for å forstå reliabiliteten til målinger. Denne variasjonen fanger opp tilfeldige forskjeller mellom målinger på samme individ og kvantifiseres som standardavviket til de individuelle verdiene, også kjent som "typical error" eller "standard error of measurement" (@RN130, s.2). "Typical error", på norsk typisk feil, kan forstås som variasjonen man vil forvente å observere fra forsøk x til forsøk y ved repeterte forsøk hos samme testdeltakere.
-
-I denne rapporten vil VO<sub>2max</sub>-maks data fra fysiologi-laben bli analysert for å kvantifisere reliabilitet i form av "typical error" av maksimal watt oppnådd under testen. Gjennomføring og standardisering av testene vil bli forklart under metode, mens resultatene vil bli presentert med hovedvekt på betydningen av "typical error" for reliabiliteten til målingene. 
+I denne rapporten vil VO<sub>2max</sub>-maks data fra fysiologi-laben bli analysert for å kvantifisere reliabilitet i form av typisk feil av maksimal watt oppnådd under testen. Gjennomføring og standardisering av testene vil bli forklart under metode, mens resultatene vil bli presentert med hovedvekt på betydningen av "typical error" for reliabiliteten til målingene. 
 
 ## Metode
 
 Dataene som skal brukes for å måle reliabilitet er hentet fra 16 ulike testpersoner som gjennomførte gjentatte VO<sub>2max</sub>-makstest på ergospirometri på fysiologilaben. Det ble satt opp slik at alle skulle gjennomføre testen fire ganger spredd utover to uker, men det var kun åtte stk som gjennomførte fire tester. Det ble gjort antropmeteriske mål av testpersonene før hver test, men i @tbl-testantro er det kun tatt utgangspunkt i målingene før første test. Totalt var det 14 stk som hadde baseline målinger som ble inkludert i @tbl-testantro.
 
 ```{r}
-#| echo: false
 #| label: tbl-testantro
 #| tbl-cap: "Karakteristikkene på testpersonene"
 
@@ -100,9 +83,6 @@ Rådata om metabolsk respons ble samlet inn med programvare fra Vyntus og ekspor
 Gjennomføringen av de fire VO<sub>2</sub>-maks-testene viste en nedadgående trend i maksimal watt-verdier fra t1 til t4. Som vist i @fig-makswatt, falt gruppens gjennomsnittlige og median watt-verdier fra første test til fjerde test. Samtidig er det en betydelig større spredning av målingene i test tre og fire sammenlignet med første og andre test. Antall deltakere som fullførte tester ved de ulike tidspunktene avtok gradvis fra t1 (n = 14) og t2 (n = 14) til t3 (n = 11) og t4 (8 deltakere). 
 
 ```{r}
-#| warning: false
-#| message: false
-#| echo: false
 #| label: fig-makswatt
 #| fig-cap: "Gjennomsnittlige watt-verdier for hele gruppen for hver testforsøk."
 
@@ -127,7 +107,7 @@ ggplot(df_all, aes(x = timepoint, y = w.max)) +
     x = "Tidspunkt",
     y = "Maksimal Watt (W)"
   ) +
-  theme_minimal(base_size = 14, base_family = "Arial") +
+  theme_minimal(base_size = 14, base_family = "sans") +
   theme(
     plot.title = element_text(face = "bold", hjust = 0.5, color = "black"),
     axis.title = element_text(face = "bold"),  # Tydelige aksetitler
@@ -137,13 +117,10 @@ ggplot(df_all, aes(x = timepoint, y = w.max)) +
   )
 ```
 
-For å forstå variasjonene på individnivå, ble maksimal watt analysert for hver deltaker. @fig-individ viser gjennomsnittlig watt for hver deltaker, sortert fra lavest til høyest, med feilstenger som representerer typisk feil for å visualisere variasjonen mellom målinger for hver deltaker. Typisk feil gir en indikasjon på den forventede variasjonen i watt ved en ny test. Fargekodingen angir enten høy (CV ≤ 3%), moderat (CV > 3% og ≤ 5%) og lav (CV > 5%) reliabilitet (@RN130). Generelt viste de fleste testpersonene høg reliabilitet, mens noen hadde større variasjon og lavere reliabilitet mellom målingene. Det er viktig å påpeke at @fig-individ kun inkluderer testpersoner som har gjennomført to eller flere tester, ettersom dette er nødvendig for å kunne beregne typisk feil $ \text{Typical Error} = \frac{\text{SD of differences}}{\sqrt{2}} $, og CV, $ \text{CV (\%)} = \frac{\text{Typical Error}}{\text{Mean Watt}} \times 100 $. 
+For å forstå variasjonene på individnivå, ble maksimal watt analysert for hver deltaker. @fig-individ viser gjennomsnittlig watt for hver deltaker, sortert fra lavest til høyest, med feilstenger som representerer typisk feil for å visualisere variasjonen mellom målinger for hver deltaker. Typisk feil gir en indikasjon på den forventede variasjonen i watt ved en ny test. Fargekodingen angir enten høy (CV ≤ 3%), moderat (CV > 3% og ≤ 5%) og lav (CV > 5%) reliabilitet [@RN130]. Generelt viste de fleste testpersonene høg reliabilitet, mens noen hadde større variasjon og lavere reliabilitet mellom målingene. Det er viktig å påpeke at @fig-individ kun inkluderer testpersoner som har gjennomført to eller flere tester, ettersom dette er nødvendig for å kunne beregne typisk feil $$\text{Typical Error} = \frac{\text{SD of differences}}{\sqrt{2}}$$ og CV $$\text{CV (\%)} = \frac{\text{Typical Error}}{\text{Mean Watt}} \times 100 $$. 
 
 
-```{r}
-#| warning: false
-#| message: false
-#| echo: false
+```{r, fig.width=10, fig.height=6, out.width="\\textwidth"}
 #| label: fig-individ
 #| fig-cap: "Gjennomsnittlige wattverdier med typisk feil fra alle testforsøk for samtlige testpersoner." 
 
@@ -223,10 +200,7 @@ ggplot(typical_error_summary, aes(x = ID, y = mean_watt, color = reliability)) +
 
 @tbl-typ-CV gir en detaljert oversikt over typisk feil og CV for hver deltaker, beregnet basert på alle tester gjennomført av den enkelte. De er rangert etter gjennomsnittlig watt, og fargene følger samme rangering mellom høy (grønn, CV ≤ 3%), moderat (gul, CV > 3% og ≤ 5%) og lav (rød) (CV > 5%) reliabilitet. Som i @fig-individ, viser @tbl-typ-CV generelt høy reliabilitet blant deltakerne, med koeffisient av variasjon (CV) ≤ 3 % for flertallet.   Id_09, id_11, id_16, og id_10 skiller seg ut med svært lav CV (< 1 %), noe som indikerer konsistente målinger mellom testene. Imidlertid ble betydelig variasjon observert for id_03 (CV = 10.50 %) og id_12 (CV = 5.08 %), som begge har lav reliabilitet. Id_01 og id_04 ligger i kategorien moderat reliabilitet med CV mellom 3 % og 5 %. Det er verdt å merke seg at id_11 ikke viser noen variasjon mellom målingene (CV = 0 %), som kan indikere perfekt samsvar mellom testene, men bør vurderes for mulig feilregistrering. Mens id_08 mangler tilstrekkelige data for beregning av typisk feil og CV."
 
-```{r}
-#| warning: false
-#| message: false
-#| echo: false
+```{r, out.width="\\textwidth"}
 #| label: tbl-typ-CV
 #| tbl-cap: "Testpersonenes typiske feil (typical error) og koeffisient av variasjon (CV)."  
 
@@ -283,13 +257,10 @@ summary_tf_cv %>%
   )
 ```
 
-For å evaluere reliabiliteten og konsistensen i målingene over tid, har det blitt gjort parvise sammenligninger av målinger på to spesifikke tidspunkter. I @tbl-testpar så referer testpar til denne parvise sammenligningen mellom målinger utført på to påfølgende tidspunkt for samme deltaker. I denne analysen har man sett på første test og andre test (t1 -> t2), andre test til tredje test (t2 -> t3) og tredje test til fjerde test (t3 -> t4). Typisk feil og koeffisient av variasjon (CV) har blitt beregnet basert på forskjellen mellom målingene i hvert par i tråd med anbefalingene til Hopkins et al. (2000) (@RN130, s.11). Samme fargekode som er blitt brukt i de andre tabellene og figurerne for å illustrere grad av reliabilitet, er også brukt i tabellen under. 
+For å evaluere reliabiliteten og konsistensen i målingene over tid, har det blitt gjort parvise sammenligninger av målinger på to spesifikke tidspunkter. I @tbl-testpar så referer testpar til denne parvise sammenligningen mellom målinger utført på to påfølgende tidspunkt for samme deltaker. I denne analysen har man sett på første test og andre test (t1 -> t2), andre test til tredje test (t2 -> t3) og tredje test til fjerde test (t3 -> t4). Typisk feil og koeffisient av variasjon (CV) har blitt beregnet basert på forskjellen mellom målingene i hvert par i tråd med anbefalingene til Hopkins et al. (2000) [@RN130, s.11]. Samme fargekode som er blitt brukt i de andre tabellene og figurerne for å illustrere grad av reliabilitet, er også brukt i tabellen under. 
 
 
-```{r}
-#| warning: false
-#| message: false
-#| echo: false
+```{r, table.pos='H'}
 #| label: tbl-testpar
 #| tbl-cap: "Gjennomsnittlig typisk feil og CV av alle testpersonen for hvert testpar." 
 
@@ -360,7 +331,8 @@ summary_gruppe %>%
     table.font.size = "medium",
     table.border.top.style = "solid",
     table.border.bottom.style = "solid"
-  )
+  )%>%
+  as_latex()
 ```
 
 
@@ -371,21 +343,21 @@ Basert på funnene i @tbl-testpar viste testparet t1 -> t2 lavest CV (2.53 %), n
 
 Denne rapporten undersøkte reliabiliteten i målinger av maksimal watt hentet fra VO<sub>2max</sub>-maks-tester, med fokus på typisk feil og koeffisienten av variasjon (CV) som mål på reliabilitet. Resultatene viste generelt høy reliabilitet, men med variasjon mellom testparene. Dette indikerer at reliabiliteten kan påvirkes av både biologiske faktorer, som fatigue og fokus, og teknologiske faktorer, som variasjoner i utstyr eller testledere.
 
-Typisk feil reflekterer variasjon fra flere kilder, inkludert biologiske faktorer som tretthet og motivasjon, samt teknologiske faktorer som kalibrering av utstyr og operatørens tilnærming (Hopkins et al., 2000) (@RN130, s.2; @RN1739). Selv om standardisering av oppvarming, protokoller og testforhold ble gjennomført, er det vanskelig å eliminere alle kilder til variasjon. Typisk feil gir derfor et mål på denne variasjonen ved gjentatte målinger. I denne analysen ble typisk feil beregnet som standardavviket av differansen mellom påfølgende målinger, justert med faktoren $\sqrt{2}$:
+Typisk feil reflekterer variasjon fra flere kilder, inkludert biologiske faktorer som tretthet og motivasjon, samt teknologiske faktorer som kalibrering av utstyr og operatørens tilnærming (Hopkins et al., 2000) [@RN130, s.2; @RN1739]. Selv om standardisering av oppvarming, protokoller og testforhold ble gjennomført, er det vanskelig å eliminere alle kilder til variasjon. Typisk feil gir derfor et mål på denne variasjonen ved gjentatte målinger. I denne analysen ble typisk feil beregnet som standardavviket av differansen mellom påfølgende målinger, justert med faktoren $\sqrt{2}$:
 
 $$
 TE = \frac{SD_{\text{diff}}}{\sqrt{2}}
 $$
 
-Denne tilnærmingen ble valgt for å fokusere på variasjonen mellom målinger, uavhengig av gjennomsnittsverdien for maksimal watt (@RN130, s.3). Ved å fjerne innflytelsen fra prestasjonsnivået, gir denne metoden et mer rettferdig grunnlag for å sammenligne reliabiliteten mellom testparene, særlig når deltakernes prestasjonsnivå varierer.
+Denne tilnærmingen ble valgt for å fokusere på variasjonen mellom målinger, uavhengig av gjennomsnittsverdien for maksimal watt [@RN130, s.3]. Ved å fjerne innflytelsen fra prestasjonsnivået, gir denne metoden et mer rettferdig grunnlag for å sammenligne reliabiliteten mellom testparene, særlig når deltakernes prestasjonsnivå varierer.
 
-Selv om typisk feil er nyttig, har den en begrensning: Den øker med måleverdien, noe som gjør det vanskelig å sammenligne reliabiliteten mellom deltakere med ulik prestasjonsevne. For eksempel vil en utøver med høy maksimal watt ha en høyere absolutt typisk feil enn en utøver med lavere watt (@RN130). For å håndtere dette ble koeffisienten av variasjon (CV) brukt som et supplerende mål:
+Selv om typisk feil er nyttig, har den en begrensning: Den øker med måleverdien, noe som gjør det vanskelig å sammenligne reliabiliteten mellom deltakere med ulik prestasjonsevne. For eksempel vil en utøver med høy maksimal watt ha en høyere absolutt typisk feil enn en utøver med lavere watt [@RN130]. For å håndtere dette ble koeffisienten av variasjon (CV) brukt som et supplerende mål:
 
 $$
 CV (\%) = \frac{\text{Typical Error}}{\text{Mean}}\times 100
 $$
 
-CV er dimensjonsløs og gir et mål på variasjonen i prosent av gjennomsnittet, noe som gjør det mulig å sammenligne reliabiliteten mellom deltakere, testforhold og utstyr (@RN130, 3). Dette var særlig viktig i denne analysen for å evaluere systematiske forskjeller i reliabilitet mellom testparene og over tid.
+CV er dimensjonsløs og gir et mål på variasjonen i prosent av gjennomsnittet, noe som gjør det mulig å sammenligne reliabiliteten mellom deltakere, testforhold og utstyr [@RN130, 3]. Dette var særlig viktig i denne analysen for å evaluere systematiske forskjeller i reliabilitet mellom testparene og over tid.
 
 En begrensning er variasjon i antall deltakere mellom testparene, noe som kan ha påvirket presisjonen i utregninge av typisk feil og CV. For eksempel var det bare 6 personer som ble brukt i analysen av testpar t3 -> t4, noe som fører til økt usikkerhet i estimatene. I tillegg vil biologiske og teknologiske faktorer som dagsform, tretthet, variasjon i kalibrering av utstyr og testleders tilnærming, ha bidratt til variasjon, til tross for standardisering. 
 
@@ -394,3 +366,147 @@ Samtidig som det er flere ting som kan ha påvirket estimatene, vil standardiser
 ## Konklusjon
 
 Denne rapporten evaluerte reliabiliteten i målinger av maksimal watt fra VO<sub>2max</sub>-maks-tester ved bruk av typisk feil og CV. Analysen viste generelt høy reliabilitet, men med variasjon mellom testparene som kan tyde på biologiske og teknologiske faktorer. For å muliggjøre sammenligning på tvers av testpersonene og over ulike tidspunkter av testing, ble CV brukt som et dimmensjonsløst mål sammen med typisk feil. Standardisering av protokoller bidro til å redusere variasjon og øke reproduserbarheten. 
+
+## Vedlegg: Koder brukt
+
+```{r, echo=TRUE, results='hide'}
+
+# Laste opp nødvendige pakker
+
+library(readxl)
+library(tidyverse)
+library(knitr)
+library(gt)
+
+# Innlesing av datasett
+df_all <- read_xlsx("data/plot_data_all_gr.xlsx") %>% 
+  mutate(w.max = as.numeric(w.max), 
+         la.max = as.numeric(la.max), 
+         hr.max = as.numeric(hr.max), 
+         rer.max = as.numeric(rer.max))
+
+# Opprydding av datasett til tabell 2.1
+baseline_df_all <- df_all %>%
+  filter(timepoint == "t1") %>% # Filtrer for timepoint == t1
+  select(sex, age, weight, height) %>% # Velg kolonner for tabellen
+  group_by(sex) %>% # Gruppér etter kjønn
+  summarise(
+    N = n(), # Antall deltakere (unik for t1)
+    Alder = sprintf("%.1f (%.1f)", mean(age, na.rm = TRUE), 
+                    sd(age, na.rm = TRUE)),
+    Vekt = sprintf("%.1f (%.1f)", mean(weight, na.rm = TRUE), 
+                   sd(weight, na.rm = TRUE)),
+    Stature = sprintf("%.0f (%.0f)", mean(height, na.rm = TRUE), 
+                      sd(height, na.rm = TRUE)),
+    .groups = "drop"
+  ) %>% 
+  # Konverter alle kolonnene til karakter for å unngå datatypeproblemer i pivot_longer
+  mutate(across(everything(), as.character)) %>%
+  pivot_longer(cols = c(N, Alder, Vekt, Stature), names_to = "Variable", 
+               values_to = "Value") %>% 
+  pivot_wider(names_from = sex, values_from = Value)
+
+# Endre kolonnenavn fra k og m til Kvinne og Mann
+baseline_df_all <- baseline_df_all %>%
+  rename(Kvinne = k, Mann = m)
+
+
+# Utregninger for figur 2.1
+
+# Beregn differanser mellom tidspunkter
+df_typical <- df_all %>%
+  arrange(id, timepoint) %>%
+  group_by(id) %>%
+  mutate(
+    diff_watt = w.max - lag(w.max),  # Beregn differanser
+    # Parvise tidspunkter
+    time_pair = paste(lag(timepoint), timepoint, sep = " -> ")
+  ) %>%
+  filter(!is.na(diff_watt)) %>%  # Fjern NA i differanser
+  ungroup()
+
+# Beregn typisk feil og CV basert på parvise tidsperioder
+typical_error_summary <- df_typical %>%
+  group_by(id) %>%
+  summarise(
+    mean_watt = mean(w.max, na.rm = TRUE),  # Gjennomsnittlig watt
+    # Typisk feil basert på differanser
+    typical_error = sd(diff_watt, na.rm = TRUE) / sqrt(2),  
+    cv = (typical_error / mean_watt) * 100,  # CV i prosent
+    .groups = "drop"
+  ) %>%
+  mutate(
+    # Sett typisk feil til 0 hvis NA
+    typical_error = ifelse(is.na(typical_error), 0, typical_error), 
+    cv = ifelse(is.na(cv), 0, cv)  # Sett CV til 0 hvis NA
+  ) %>%
+  arrange(mean_watt) %>%
+  mutate(ID = factor(id, levels = id))  # Bevar sorteringsrekkefølgen
+
+# Klassifiser reliabilitet basert på CV
+typical_error_summary <- typical_error_summary %>%
+  mutate(reliability = case_when(
+    cv <= 5 ~ "Høy Reliabilitet",         # CV ≤ 5%
+    cv > 5 & cv <= 10 ~ "Moderat Reliabilitet",  # CV > 5% og ≤ 10%
+    cv > 10 ~ "Lav Reliabilitet"           # CV > 10%
+  ))
+
+# Filtrer kun deltakere med gyldige verdier
+typical_error_summary <- typical_error_summary %>%
+  filter(!is.na(mean_watt))
+
+
+
+# Beregn gjennomsnitt, typisk feil og CV for hver deltaker
+summary_tf_cv <- df_all %>%
+  group_by(id) %>%
+  summarise(
+    mean_watt = mean(w.max, na.rm = TRUE),
+    typical_error = sd(w.max, na.rm = TRUE) / sqrt(2),  # Typisk feil
+    cv = (typical_error / mean_watt) * 100,  # Typisk prosentfeil (CV)
+    .groups = "drop"
+  ) %>%
+  mutate(
+    mean_watt = round(mean_watt, 1),
+    typical_error = round(typical_error, 2),
+    cv = round(cv, 2)
+  ) %>% 
+  arrange(desc(mean_watt))  # Sorter etter CV i synkende rekkefølge
+
+
+# Nødvendige utreninger og opprydding for tabelle 2.3
+
+# Les inn data og filtrer for relevante variabler og målepunkter
+df_filtered <- read_xlsx("data/plot_data_all_gr.xlsx") %>% 
+  filter(timepoint %in% c("t1", "t2", "t3", "t4")) %>% 
+  select(id, timepoint, w.max) %>% 
+  mutate(w.max = as.numeric(w.max))
+
+# Fyll inn manglende tidspunkter for hver deltaker
+df_complete <- df_filtered %>%
+  # Fyller inn NA for manglende tidspunkter
+  complete(id, timepoint, fill = list(w.max = NA))  
+
+# Beregn typisk feil og CV mellom testpar
+df_pairwise <- df_complete %>%
+  arrange(id, timepoint) %>%
+  group_by(id) %>%
+  mutate(
+    diff_watt = w.max - lag(w.max),  # Differanse mellom tester
+    mean_watt_pair = (w.max + lag(w.max)) / 2,  # Gjennomsnitt for testparet
+    test_pair = paste(lag(timepoint), timepoint, sep = " -> ")
+  ) %>%
+  filter(!is.na(diff_watt)) %>%  # Fjern rader uten gyldige verdier
+  ungroup()
+
+# Beregn typisk feil og CV på gruppenivå
+summary_gruppe <- df_pairwise %>%
+  group_by(test_pair) %>%
+  summarise(
+    typical_error = sd(diff_watt, na.rm = TRUE),  # SD av differansene
+    # Gjennomsnittlig CV
+    mean_cv = mean((abs(diff_watt) / mean_watt_pair) * 100, na.rm = TRUE),  
+    .groups = "drop"
+  )
+```
+

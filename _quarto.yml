@@ -2,9 +2,9 @@ project:
   type: book
 
 book:
-  title: "Mappeeksamen IDR4000"
-  author: "Student Studentson"
-  date: "2024-09-10"
+  title: "Mappeeksamen IDR4000: Kvantitativ metode og statistikk"
+  author: "Kandidatsnummer: 516. Antall ord: 16 113"
+  date: "2024-11-22"
   chapters:
     - index.qmd
     - 01-reliabilitet.qmd
@@ -18,7 +18,15 @@ book:
 
 bibliography: resources/bib-final.bib
 
-format: pdf
+format: 
+  pdf:
+    number-sections: true
+    toc: true       # Inkluderer innholdsfortegnelse
 
-
-
+execute: 
+  warning: false
+  echo: false
+crossref:
+  fig-title: "Figur"
+  tbl-title: "Tabell"
+csl: resources/apa.csl

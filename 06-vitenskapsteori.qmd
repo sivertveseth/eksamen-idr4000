@@ -1,90 +1,64 @@
----
-title: "Vitenskapsteori"
-author: "Sivert Helland Veseth"
-format: 
-  html:
-    number-sections: true
-    toc: true
-    code-fold: true
-execute: 
-  warning: false
----
-
-# Arbeidskrav i filosofihistorie 
+# Arbeidskrav i vitenskapsfilosofi
 
 ## Spørsmål 1 
 
 *“Ifølge Hume er det umulig å rasjonelt begrunne bruken av induksjon. Hva er argumentet for denne konklusjonen? Gi en innvending mot ett av premissene i Humes argument og prøv å svare på denne innvendingen på Humes vegne.”*
 
  
-
 ### Innledning 
 
-David Hume var ein skotsk empirist, som gjennom sitt syn og tankar har hatt stor innflytelse på moderne vitskapsfilosofi (Norton, D. F., & Taylor, J. (2008), kap 1). Sjølv om Hume sine meningar og tankar har vekket ein rekkje spørsmål og debatter frå hans levetid til nå, er det nok hans skepsis og analyse av årsak og induksjon som har fått mest merksemd (Norton, D. F., & Taylor, J., s.214-221).  
-
- 
+David Hume var en skotsk empirist, som gjennom sitt syn og tanker har hatt stor innflytelse på moderne vitenskapsfilosofi [@norton2008, kap 1]. Selv om Hume sine meninger og tanker har vekket en rekke spørsmål og debatter fra hans levetid til nå, er det nok hans skepsis og analyse av årsak og induksjon som har fått mest oppmerksomhet [@norton2008, s.214-221].  
 
 ### Humes argument mot induksjon 
 
-Induksjon er ein vitskapleg metode som forsøker å trekke generelle lovar eller prinsipp basert på enkelte observasjonar (Tranøy, 2021), for eksempel: “Eg brand meg når eg tok på flammene, derfor er flammer varme.”. Hume mente at det ikkje er mogleg å fastslå årsaksforholdet som vi erfarer gjennom sansane våre, som eksempelet med flammene over, men på grunn av vår gjentatte erfaring med at det er ein konstant samanheng mellom to typar hendingar, så antar vi at det eine er årsaka til den andre (Hume, 2019, s.27-28).  
+Induksjon er en vitenskapelig metode som forsøker å trekke generelle lover eller prinsipp basert på enkelte observasjoner [@tranoy2021], for eksempel: “Jeg brand meg når eg tok på flammene, derfor er flammer varme.”. Hume mente at det ikke er mulig å fastslå årsaksforholdet som vi erfarer gjennom sansene våre, som eksempelet med flammene over, men på grunn av vår gjentatte erfaring med at det er en konstant sammenheng mellom to typer hendinger, så antar vi at det ene er årsaka til den andre [@hume2019].  
 
-Ein forutsetning for at konklusjonen i mitt induktive argument over skal holde, er at det ikkje skjer ein endring i naturens gang. Denne førestillinga om likskap mellom observerte (fortida) og uobserverte mønster (framtida), er kjent som uniformitetsprinsippet. Men, korleis kan mine tidlegare erfaringar med å brenne meg ved berøring av flammer legitimere ein slutning om at dette også vil inntreffe i framtida? Hume hevda at førestillinga om at framtida vil vere lik fortida ikkje kan bevisast utan å ende i ein sirkulær argumentasjon (Norton, D. F., & Taylor, J., s.215). Dette skyldast at for å rettferdiggjere induksjon må man allereie forutsette det prinsippet man prøver å bevise, at framtida vil følgje same mønster som fortida.   
-
-Hume hevdet at alle induktive argumenter bygger på førestillinga at framtidige hendingar vil følgje same mønster som tidlegare hendingar, og at denne førestillinga er ein forutsetning for å trekke induktive slutningar (Norton & Taylor, 2008, s.215; Hume, 2019, s.38-39). Når eg konkluderer med at eg vil brenne meg når eg tar på flammer, baserer eg denne slutninga på førestillinga om at framtida vil likne på fortida. Hume påpekte at dette fører til ein sirkulær argumentasjon, sidan eg ikkje kan bevise min førestilling utan å allereie forutsette same mønsteret. Dette utgjer sjølve kjernen i Humes kritikk av induksjon, med at man kan ikkje rasjonelt grunngi bruken av induksjon utan å byggje på den same førestillinga vi forsøker å bevise.  
-
- 
+En forutsetning for at konklusjonen i mitt induktive argument skal holde, er at naturens gang ikke endrer seg, altså at framtida vil likne på fortida. Denne førestillinga, kjent som uniformitetsprinsippet, ligger til grunn for alle induktive slutninger. Hume hevdet at dette prinsippet ikke kan bevises uten å ende i en sirkulær argumentasjon, fordi enhver rettferdiggjøring av induksjon forutsetter det samme prinsippet man prøver å bevise – at framtida vil følge samme mønster som fortida [@norton2008, s.215; @hume2019, s.38-39]. Når jeg konkluderer med at jeg vil brenne meg ved berøring av flammer, bygger jeg på denne førestillinga, men ifølge Hume kan jeg ikke bevise den uten å allerede forutsette at framtida vil være lik fortida. Dette utgjør kjernen i Humes kritikk av induksjon: vi kan ikke rasjonelt grunngi bruken av induksjon uten å bygge på den samme førestillinga vi forsøker å rettferdiggjøre.
 
 ### Innvending mot Hume sitt argument  
 
-Selv om Hume påpeikte at vi ikkje kan observere eit nødvendige årsaksforhold mellom to hendingar, berre at ein hending følgjer ein anna, kan det innvendast mot dette premisset at naturvitskapen har vist at induktive slutningar fungerer påliteleg i praksis. For eksempel kan Newtons gravitasjonslov brukast til å forutsi at ein gjenstand vil falle mot jorda når den den har blitt sleppt. Sjølv om det kan vere vanskeleg å bevise nødvendige årsaksforhold direkte, kan ein hevde at den praktiske suksessen til naturvitskaplege lover, som Newtons gravitasjonslov, rettferdiggjer bruken av induksjon. Dette kjem tydeleg til uttrykk i vår evne til nøyaktig å forutsi framtidige hendingar, som planetbanar eller gjenstandar sin bevegelse på jorda, basert på tidlegare erfaringar.   
+Selv om Hume påpekte at vi ikke kan observere et nødvendige årsaksforhold mellom to hendelser, bare at en hending følger en annen, kan det innvendast mot dette premisset at naturvitskapen har vist at induktive slutninger fungerer pålitelig i praksis. For eksempel kan Newtons gravitasjonslov brukast til å forutsi at en gjenstand vil falle mot jorda når den den har blitt sleppt. Selv om det kan være vanskelig å bevise nødvendige årsaksforhold direkte, kan en hevde at den praktiske suksessen til naturvitskaplege lover, som Newtons gravitasjonslov, rettferdiggjør bruken av induksjon. Dette kommer tydelig til uttrykk i vår evne til nøyaktig å forutsi framtidige hendelser, som planetbanar eller gjenstander sin bevegelse på jorda, basert på tidligere erfaringer.   
 
  
-
 ### Humes respons på innvendinga 
 
-Hume ville sannsynlegvis ha svart på innvendinga ved å fasthalde sin skepsis til at induksjon er basert på rasjonell fornuft. I staden ville han ha påpeikt at våre induktive slutningar kjem frå ein naturlig tilbøyelegheit til å forvente at framtida vil likne fortida, basert på vaner og førestellingsevne (Hume, 2019, s.48-49). Denne tilbøyelegheita til å trekke slutningar om framtida er det Hume kalte for customs, altså vaner (Hume, 2019, s.44). Sjølv om Hume ville ha oppretthaldt sin påstand om at induksjon ikkje er rasjonelt grunngitt, ville han også ha erkjent, i likskap med min innvending, at induksjon er avgjerande for vår praktiske suksess. Hume meinte at desse induktive slutningane, som bygger på vaner og erfaringar, er meir effektive for vår overleving og praktiske handlingar enn om vi skulle ha basert alle slutningar på rein rasjonalitet (David, H., 2019, s.57-58).  
+Hume ville sannsynligvis ha svart på innvendinga ved å fasthalde sin skepsis til at induksjon er basert på rasjonell fornuft. I steden ville han ha påpeikt at våre induktive slutningar kjem frå en naturlig tilbøyelegheit til å forvente at framtida vil likne fortida, basert på vaner og førestellingsevne [@hume2019, s.48-49]. Denne tilbøyelegheita til å trekke slutninger om framtida er det Hume kalte for customs, altså vaner [@hume2019, s.44]. Selv om Hume ville ha opprettholdt sin påstand om at induksjon ikke er rasjonelt grunngitt, ville han også ha erkjent, i likskap med min innvending, at induksjon er avgjørende for vår praktiske suksess. Hume mente at disse induktive slutningene, som bygger på vaner og erfaringer, er mer effektive for vår overleving og praktiske handlinger enn om vi skulle ha basert alle slutninger på ren rasjonalitet [@hume2019, s.57-58].  
 
 
-## Spørsmålet 2 
+## Spørsmål 2 
 
 *Gi en kort beskrivelse av falsifikasjonisme og si litt om hvorfor Popper var motivert til å utvikle denne teorien. Presenter så ett problem med teorien og vurder hvorvidt problemet kan løses.*
 
- 
-
 ### Innledning 
 
-Demarksjonsproblemet er eit grunnleggande tema innan vitskapsfilosofien, og det handlar om korleis vi kan skilje mellom vitskap og ikkje-vitskap. Dette skiljet er avgjerande for vår forståing av kva som reiknast som gyldig kunnskap, og har implikasjonar for områder som metafysikk og religion (Popper, K. R., 1959, s.34-39). Mange filosofer har forsøkt å definere klare kriterier for denne avgrensinga, og ein dei mest sentrale i denne debatten er Karl Popper.  
+Demarksjonsproblemet er et grunnleggende tema innen vitenskapsfilosofi, og det handler om hvordan vi kan skille mellom vitskap og ikke-vitskap. Dette skilet er avgjørende for vår forståing av hva som reiknast som gyldig kunnskap, og har implikasjoner for områder som metafysikk og religion [@popper1959, s.34-39]. Mange filosofer har forsøkt å definere klare kriterier for denne avgrensinga, og en de mest sentrale i denne debatten er Karl Popper.  
 
- 
 
 ### Beskrivelse av falsifikasjonisme og Poppers motivasjon 
 
-Popper var ein markant kritikar av induksjon. Gjennom sin avvising av induksjonsprinsippet utfordra han ikkje berre empirisk vitskap sin grunnleggande metode, men også det tradisjonelle skiljet mellom vitskap og metafysisk spekulasjon (Popper, K. R., 1959, s.34). For Popper var ein vitskapeleg teori ikkje gyldig fordi den kunne verifiserast gjennom observasjonar, men fordi den kunne falsifiseres gjennom testing (Popper, K. R., 1959, s.40). Han hevdet at vitskapens rolle er ikkje å verifisere ein teori basert på enkeltobservasjonar eller erfaring, men å utvikle teoriar som kunne falsifiseres gjennom observasjonar eller eksperimenter (Popper, K. R., 1959, s.41-42, 47-48). 
+Popper var en markant kritiker av induksjon. Gjennom sin avvising av induksjonsprinsippet utfordra han ikke bare empirisk vitskap sin grunnleggende metode, men også det tradisjonelle skilet mellom vitenskap og metafysisk spekulasjon [@popper1959, s.34]. For Popper var en vitenskapelig teori ikke gyldig fordi den kunne verifisert gjennom observasjonar, men fordi den kunne falsifiseres gjennom testing [@popper1959, s.40]. Han hevdet at vitenskapens rolle er ikke å verifisere en teori basert på enkeltobservasjonar eller erfaring, men å utvikle teorier som kunne falsifiseres gjennom observasjoner eller eksperimenter [@popper1959, s.41-42, 47-48]. 
 
-Eit eksempel på ein vitskapelig teori er påstanden: “Newton sin lov om gravitasjon seie at steinen eg slipp vil falle mot bakken på grunn av tiltrekkinga mellom to masser.”. Denne påstanden er vitskapeleg fordi den kan testast og potensielt falsifiseres. Derimot vil påstanden “Steinen faller fordi universet bestemmer det.”, ikkje kunne falsifiseres og er dermed ikkje vitskapeleg.  
+Et eksempel på en vitenskapelig teori er påstanden: “Newton sin lov om gravitasjon seie at stenen eg slipp vil falle mot bakken på grunn av tiltrekkinga mellom to masser.”. Denne påstanden er vitenskapelig fordi den kan testes og potensielt falsifiseres. Derimot vil påstanden “Stenen faller fordi universet bestemmer det.”, ikke kunne falsifiseres og er dermed ikke vitenskapelig  
 
-Popper var motivert til å utvikle falsifikasjonismen på grunn av dei svakheitene han såg i induktiv logikk. Han meinte at ideen om at generaliseringar basert på observasjonar kunne gi sikker kunnskap, var logisk problematisk. Som eit svar på dette utvikla han falsifikasjonsprinsippet, som metode for å sikre at teoriar kunne utfordrast og testast på ein måte som kunne avsløre deires potensielle moglegheiter for feil.  
+Popper var motivert til å utvikle falsifikasjonismen på grunn av de svakhetene han såg i induktiv logikk. Han mente at ideen om at generaliseringar basert på observasjonar kunne gi sikker kunnskap, var logisk problematisk. Som et svar på dette utvikla han falsifikasjonsprinsippet, som metode for å sikre at teorier kunne utfordrast og testast på en måte som kunne avsløre deres potensielle muligheter for feil.  
 
  
-
 ### Utfordring med falsifikasjonisme  
 
-Sjølv om Popper sin falsifikasjonisme gir ein streng vitskapleg metode, gjenspeglar den ikkje alltid korleis vitskap faktisk utviklar seg. Ifølge Popper bør ein teori forkastast når den møter motstridne data, ettersom den då er falsifisert og dermed “bevist” å gjere feil. Popper var kritisk til bruken av tilpassingar og hjelpehypotesar som berre ble introdusert for å redde teoriar frå falsifikasjon, fordi dette kunne redusere falsifiserbarheita til teorien og dermed gjere den uvitskapleg (Popper, K. R., 1959, s.145).  
+Selv om Popper sin falsifikasjonisme gir en streng vitskapleg metode, gjenspeiler den ikke alltid hvordan vitenskapen faktisk utvikler seg. Ifølge Popper bør en teori forkastet når den møter motstriden data, ettersom den då er falsifisert og dermed “bevist” å gjøre feil. Popper var kritisk til bruken av tilpasninger og hjelpehypotesar som bare ble introdusert for å redde teorier fra falsifikasjon, fordi dette kunne redusere falsifiserbarheita til teorien og dermed gjere den uvitskapleg [@popper1959, s.145].  
 
-I praksis er det sjeldan forskarar forkastar ein teori ved første teikn til motstridene data. Ofte vel dei å gjere tilpassingar eller forbetrar teoriane med hjelp av hjelpehypotesar. Dette skaper derfor eit misforhold mellom Popper sitt ideal om falsifikasjon og vitskapleg praksis, der teoriar ofte justerast i staden for å bli forkasta umiddelbart. Eit eksempel på dette er Newton sine lover om bevegelse, som ble revidert fleire gangar gjennom historia. Sjølv om Newtons lover forklarte bevegelse i dei fleste praktiske situasjonar med høy presisjon, viste dei seg utilstrekkelege for å beskrive bevegelse i ekstreme forhold som ved svært høge hastigheiter. I staden for å forkaste lovene, ble dei utvida og korrigert av Albert Einstein for å forklare avvika. Dette er eit eksempel på korleis vitskapen i praksis ofte justerer teoriar framfor å forkaste dei umiddelbart. 
+I praksis er det sjelden forskarar forkaster en teori ved første tegn til motstridene data. Ofte vel de å gjøre tilpasninger eller forbedrer teoriane med hjelp av hjelpehypotesar. Dette skaper derfor et misforhold mellom Popper sitt ideal om falsifikasjon og vitskapleg praksis, der teorier ofte justeres i staden for å bli forkasta umiddelbart. Et eksempel på dette er Newton sine lover om bevegelse, som ble revidert flere gangar gjennom historia. Selv om Newtons lover forklarte bevegelse i de fleste praktiske situasjoner med høy presisjon, viste de seg utilstrekkelige for å beskrive bevegelse i ekstreme forhold som ved svært høge hastigheter. I staden for å forkaste lovene, ble de utvida og korrigert av Albert Einstein for å forklare avvika. Dette er et eksempel på hvordan vitskapen i praksis ofte justerer teorier framfor å forkaste de umiddelbart. 
 
  
 
 ### Poppers løsning 
 
-Popper erkjenner denne utfordringa, men hevder at ho kan løysast ved å følgje strenge metodologiske regler (Popper, 1959, s.81-84, 145). Han argumenterer for at tilpassingar som berre løyser eit enkelt problem i ein teori, såkalla ad hoc-hypotesar, bør unngåast, da dei svekkjer teoriens vitskaplege verdi. Modifikasjonar som fører til nye, testbare predikasjonar er derimot akseptable, ettersom dei styrkjer teorien ved å gjere den meir falsifiserbar (Popper, 1959, s.83). Vidare framhevar Popper prinsippet om sparsommeligheit, kjent som Ockhams barberkniv, som tilseier at man bør unngå unødvendig antakingar for å forhindre at teoriar blir unødig komplekse (Store norske leksikon, 2005-2007).  
+Popper erkjenner denne utfordringa, men hevder at ho kan løysast ved å følge strenge metodologiske regler [@popper1959, s.81-84, 145]. Han argumenterer for at tilpasninger som bare løyser et enkelt problem i en teori, såkalla ad hoc-hypotesar, bør unngå, da dei svekker teoriens vitskaplege verdi. Modifikasjoner som fører til nye, testbare prediksjoner er derimot akseptable, ettersom de styrker teorien ved å gjøre den mer falsifiserbar [@popper1959, s.83]. Videre fremhever Popper prinsippet om sparsommeligheit, kjent som Ockhams barberkniv, som tilsier at man bør unngå unødvendig antakingar for å forhindre at teorier blir unødig komplekse [@snl2007].
 
-Sjølv om disse reglene gir ein metodologiske løysning på problemet, kan dei vere betre eigna som ideal enn som praktiske verktøy i vitskapeleg praksis. Vitskapen i praksis er meir fleksibel og kompleks enn det Popper førestilte seg, og det er ikkje like enkelt å vite når man bør forkaste ein teori og når man burde revidere den.  
-
- 
+Selv om disse reglene gir en metodologiske løsning på problemet, kan de være betre egna som ideal enn som praktiske verktøy i vitenskapelig praksis. Vitenskapen i praksis er mer fleksibel og kompleks enn det Popper førestilte seg, og det er ikke like enkelt å vite når man bør forkaste en teori og når man burde revidere den.  
 
 ### Konklusjon 
 
-Sjølv om falsifikasjonisme i teorien seie at ein teori skal forkastast ved motstridande data, viser vitskapleg praksis at teoriar ofte modifiserast og tilpassast i staden. Dette reflekterer vitskapens natur som ein kontinuerleg prosess med prøving, feil, og forbetring, og at falsifikasjon i praksis viser seg å vere ein meir gradvis og fleksibel prosess enn det Poppers opprinnelege modell antydar. 
+Selv om falsifikasjonisme i teorien seie at en teori skal forkastes ved motstridende data, viser vitenskapelig praksis at teorier ofte modifiserast og tilpasset i staden. Dette reflekterer vitskapens natur som en kontinuerlig prosess med prøving, feil, og forbetring, og at falsifikasjon i praksis viser seg å være en mer gradvis og fleksibel prosess enn det Poppers opprinnelege modell antydar. 
 
  
